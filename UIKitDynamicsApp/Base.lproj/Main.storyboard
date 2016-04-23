@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Circle Animation View Controller-->
         <scene sceneID="gjq-AY-E8m">
             <objects>
-                <viewController id="Hf5-av-y5w" customClass="ViewController" customModule="UIKitAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hf5-av-y5w" customClass="CircleAnimationViewController" customModule="UIKitAnimations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T6h-7t-FsZ"/>
                         <viewControllerLayoutGuide type="bottom" id="CQy-35-LjC"/>

@@ -22,7 +22,10 @@
 		C71F7DF41CB80D3E009211CC /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C71F7DCE1CB80C03009211CC /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C71F7DF71CB80D3F009211CC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71F7DD61CB80C03009211CC /* RxBlocking.framework */; };
 		C71F7DF81CB80D3F009211CC /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C71F7DD61CB80C03009211CC /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C72BC11C1CC1232A0012BDFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72BC11B1CC1232A0012BDFC /* ViewController.swift */; };
+		C72BC11C1CC1232A0012BDFC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72BC11B1CC1232A0012BDFC /* HomeViewController.swift */; };
+		C734B8141CCC004600654387 /* CircleAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B8131CCC004600654387 /* CircleAnimationViewController.swift */; };
+		C734B82D1CCC016200654387 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B82C1CCC016200654387 /* CircleView.swift */; };
+		C734B8311CCC0AD800654387 /* RingAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B8301CCC0AD800654387 /* RingAround.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,7 +237,10 @@
 		C71F7DA81CB80BD9009211CC /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		C71F7DA91CB80BD9009211CC /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		C71F7DAE1CB80C02009211CC /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Carthage/Checkouts/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
-		C72BC11B1CC1232A0012BDFC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C72BC11B1CC1232A0012BDFC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C734B8131CCC004600654387 /* CircleAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimationViewController.swift; sourceTree = "<group>"; };
+		C734B82C1CCC016200654387 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		C734B8301CCC0AD800654387 /* RingAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingAround.swift; sourceTree = "<group>"; };
 		C78C5CF01CBF954200DC359C /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,7 +275,10 @@
 		C70567871CBE201200E64C89 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C72BC11B1CC1232A0012BDFC /* ViewController.swift */,
+				C72BC11B1CC1232A0012BDFC /* HomeViewController.swift */,
+				C734B8131CCC004600654387 /* CircleAnimationViewController.swift */,
+				C734B82C1CCC016200654387 /* CircleView.swift */,
+				C734B8301CCC0AD800654387 /* RingAround.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -675,9 +684,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C709FB381CBCD49D00417B12 /* UIKit+Ext.swift in Sources */,
-				C72BC11C1CC1232A0012BDFC /* ViewController.swift in Sources */,
+				C734B8141CCC004600654387 /* CircleAnimationViewController.swift in Sources */,
+				C72BC11C1CC1232A0012BDFC /* HomeViewController.swift in Sources */,
 				C71F7D7B1CB80BAF009211CC /* AppDelegate.swift in Sources */,
+				C734B8311CCC0AD800654387 /* RingAround.swift in Sources */,
 				C70567BA1CBE6B7300E64C89 /* String+Ext.swift in Sources */,
+				C734B82D1CCC016200654387 /* CircleView.swift in Sources */,
 				C709FB371CBCD49D00417B12 /* Math+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ import RxSwift
 
 
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
   
 //    override func viewDidAppear(animated: Bool) {
