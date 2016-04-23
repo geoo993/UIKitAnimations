@@ -234,7 +234,6 @@
 		C71F7DA81CB80BD9009211CC /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		C71F7DA91CB80BD9009211CC /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		C71F7DAE1CB80C02009211CC /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Carthage/Checkouts/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
-		C71F7DEE1CB80C34009211CC /* PhonicsTextExplosion.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PhonicsTextExplosion.playground; sourceTree = "<group>"; };
 		C72BC11B1CC1232A0012BDFC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C78C5CF01CBF954200DC359C /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,7 +304,7 @@
 				C71F7DAC1CB80BE0009211CC /* Config */,
 				C71F7DAD1CB80BEC009211CC /* Dependencies */,
 				C71F7DED1CB80C1A009211CC /* Playgrounds */,
-				C71F7D791CB80BAF009211CC /* UIKitDynamicsApp */,
+				C71F7D791CB80BAF009211CC /* UIKitAnimationsApp */,
 				C71F7D781CB80BAF009211CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -320,7 +319,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C71F7D791CB80BAF009211CC /* UIKitDynamicsApp */ = {
+		C71F7D791CB80BAF009211CC /* UIKitAnimationsApp */ = {
 			isa = PBXGroup;
 			children = (
 				C70567B81CBE6B6100E64C89 /* Model */,
@@ -333,6 +332,7 @@
 				C71F7D831CB80BAF009211CC /* LaunchScreen.storyboard */,
 				C71F7D861CB80BAF009211CC /* Info.plist */,
 			);
+			name = UIKitAnimationsApp;
 			path = UIKitDynamicsApp;
 			sourceTree = "<group>";
 		};
@@ -383,7 +383,6 @@
 		C71F7DED1CB80C1A009211CC /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				C71F7DEE1CB80C34009211CC /* PhonicsTextExplosion.playground */,
 				C78C5CF01CBF954200DC359C /* Observables.playground */,
 			);
 			name = Playgrounds;
@@ -839,7 +838,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = UIKitDynamicsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RealExHackathon.UIKitDynamicsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
 				PRODUCT_NAME = UIKitAnimations;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -852,7 +851,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = UIKitDynamicsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RealExHackathon.UIKitDynamicsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
 				PRODUCT_NAME = UIKitAnimations;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

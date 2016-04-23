@@ -30,39 +30,32 @@ let scanning = timingArray.toObservable()
     .subscribeNext { tick in 
         print(tick) 
         
-        tickOffset += 1
-        
-        let newBox = UILabel(frame: CGRect(x: (30 * tickOffset), y: 200, width: 40, height: 40))
-            newBox.backgroundColor = UIColor.redColor()
-            newBox.layer.cornerRadius = 2
-            newBox.layer.borderColor
-            newBox.layer.borderWidth = 5
-            newBox.layer.masksToBounds = true
-            
-            vc.view.addSubview(newBox)
-        
 }
 
 
 
 
 var state = false
-//let subscription =
-//    button.rx_tap
-//    .subscribeNext{ 
-//        state = !state
-//        button.backgroundColor = state ? UIColor.redColor() : UIColor.greenColor() 
-//        print(state)
-//}
+let subscription =
+    button.rx_tap
+    .subscribeNext{ 
+        state = !state
+        button.backgroundColor = state ? UIColor.redColor() : UIColor.greenColor() 
+        print(state)
+}
 
-//Observable<Int64>.interval(5.0, scheduler: MainScheduler.instance)
-//    .take(1)
-//    .subscribeNext { tick in subscription.dispose() }
+Observable<Int64>.interval(5.0, scheduler: MainScheduler.instance)
+    .take(1)
+    .subscribeNext { tick in subscription.dispose() }
 
 
-//
+
 //Observable<Int64>.interval(0.5, scheduler: MainScheduler.instance)
 //    .subscribeNext { tick in state = (tick % 2 == 0) }
+//
+
+
+
 
 let mySwitcher = 
     button.rx_tap
