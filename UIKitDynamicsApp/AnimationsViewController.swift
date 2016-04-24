@@ -12,11 +12,13 @@ import RxCocoa
 import RxSwift
 import CoreMotion
 
-class CircleAnimationViewController : UIViewController {
+class AnimationsViewController : UIViewController {
     
     
     let disposeBag = DisposeBag()
     
+    let textLayer = CAShapeLayer()
+    let label = UILabel()
     var tickCount = 1
     
     func fadeInOutAnimation(shape:UIView,duration: NSTimeInterval)
@@ -122,8 +124,9 @@ class CircleAnimationViewController : UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+       super.viewDidLoad()
+
+    
         view.backgroundColor = UIColor.randomColor()
         let rect = CGRect(x: -25, y: -25, width: 50, height: 50)
         
@@ -135,11 +138,14 @@ class CircleAnimationViewController : UIViewController {
        
         var shapeScale1 = UIView()
         shapeScale1 = addLayer(shapeScale1, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        shapeScale1.frame.origin = CGPoint(x: 100, y: 150)
+        shapeScale1.frame.origin = CGPoint(x: 50, y: 150)
         view.addSubview(shapeScale1)
-        UIView.animateWithDuration(1.0) {
+        let opt : UIViewAnimationOptions = [UIViewAnimationOptions.Repeat, .Autoreverse, .CurveEaseOut]
+        UIView.animateWithDuration(0.5, delay: 0, options: opt, animations: { 
+        
             shapeScale1.transform = CGAffineTransformMakeScale(2, 2)
-        }
+            shapeScale1.transform = CGAffineTransformMakeTranslation(100, 0)
+        }, completion: nil )
 
         var shapeScale2 = UIView()
         shapeScale2 = addLayer(shapeScale2, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
@@ -152,57 +158,44 @@ class CircleAnimationViewController : UIViewController {
         
         var shapeRotate = UIView()
         shapeRotate = addLayer(shapeRotate, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        shapeRotate.frame.origin = CGPoint(x: 320, y: 625)
+        shapeRotate.frame.origin = CGPoint(x: 320, y: 585)
         view.addSubview(shapeRotate)
         rotationAnimation(shapeRotate,duration: 5)
         
         var shapeFade = UIView()
         shapeFade = addLayer(shapeFade, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        shapeFade.frame.origin = CGPoint(x: 220, y: 625)
+        shapeFade.frame.origin = CGPoint(x: 220, y: 585)
         view.addSubview(shapeFade)
         fadeInOutAnimation(shapeFade, duration: 2.0)
         
         let shapeBorderColor = UIView(frame: rect)
         let borderColor = UIColor.randomColor()
-        shapeBorderColor.frame.origin = CGPoint(x: 20, y: 600)
+        shapeBorderColor.frame.origin = CGPoint(x: 20, y: 560)
         view.addSubview(shapeBorderColor)
         borderColorAnimation(shapeBorderColor,startColor: borderColor,toColor: UIColor.randomColor(), duration: 1.0)
         
         let shapeColor = UIView(frame: rect)
         let colorr = UIColor.randomColor()
-        shapeColor.frame.origin = CGPoint(x: 110, y: 600)
+        shapeColor.frame.origin = CGPoint(x: 110, y: 560)
         view.addSubview(shapeColor)
         colorAnimation(shapeColor,startColor: colorr,toColor: UIColor.randomColor(), duration: 1.0)
            
         
         var mover = UIView()
         mover = addLayer(mover, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        mover.frame.origin = CGPoint(x: 50, y: 500)
+        mover.frame.origin = CGPoint(x: 50, y: 470)
         view.addSubview(mover)
         
         var mover2 = UIView()
         mover2 = addLayer(mover2, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        mover2.frame.origin = CGPoint(x: 50, y: 550)
+        mover2.frame.origin = CGPoint(x: 50, y: 520)
         view.addSubview(mover2)
         movingAnimation(mover,shape2: mover2, duration: 5.0)
-        
-       
-        
-//        let option2 : UIViewAnimationOptions = [UIViewAnimationOptions.Repeat, .Autoreverse, .CurveEaseInOut]
-//        UIView.animateWithDuration(0.2, delay: 0, options: option2, animations: { 
-//            
-//            mover.transform = CGAffineTransformMakeTranslation(100, 0) 
-//            
-//        }, completion: nil )
-//        
-        
-        //let textRect = CGRect(x: 275, y: 640, width: 100, height: 20)
-        //addTextLayer(textRect, word: "Hello George", fontSize: 12, roundedCorners: 5, alpha: 1)
-        
-        
+    
+
         let xPos = self.view.frame.midX
-        let yPos = self.view.frame.midY
-        let circleLength = CGFloat.random(100, max: 180)
+        let yPos = self.view.frame.midY-10
+        let circleLength = CGFloat.random(100, max: 150)
         let lineW = 0.2 * circleLength
                 
         //back ring
@@ -216,7 +209,6 @@ class CircleAnimationViewController : UIViewController {
         ringView.frame.origin = CGPoint(x: xPos, y: yPos)
         view.addSubview(ringView)
    
-        
         let durations = Array(0 ..< 50).map { idx -> Double in 
             let timeDelays = Double.roundToPlaces(Double.random(1.0, max: 5.0),places: 1)
             //print(timeDelays)
@@ -234,7 +226,7 @@ class CircleAnimationViewController : UIViewController {
             
         }
         .subscribeNext { tick in 
-            //print(tick, durations[self.tickCount]) 
+            print(tick, self.tickCount) 
             
             let animationTime = NSTimeInterval(durations[self.tickCount])
             ringView.layerColor(UIColor.randomColor())
@@ -244,9 +236,16 @@ class CircleAnimationViewController : UIViewController {
         }.addDisposableTo(self.disposeBag)
         
         
+        let text = "Hello George, welcome home. Tap here to change color "
+        let fontsize :CGFloat = 13
+        let pos = CGPoint(x: 10, y: 630)
+        let textView = UITextView(frame: CGRect(x: pos.x, y: pos.y, width: 350, height: 30))
+        textView.clipsToBounds = false
+        textView.text = text
+        textView.font = textView.font?.fontWithSize(fontsize)
+        textView.editable = false
+        view.addSubview(textView)
         
-        
-        var timer : CGFloat = 0
         
         let longPressGesture = UILongPressGestureRecognizer()
         longPressGesture.minimumPressDuration = 0.0
@@ -255,37 +254,39 @@ class CircleAnimationViewController : UIViewController {
             .rx_event
             .subscribeNext { tap in
                 
-                let location = tap.locationInView(self.view)
-                //let text = tap.view as? UIView
+                let location = tap.locationInView(textView)
+                //let text = tap.view! as UIView
                 
                 switch tap.state {
                 case .Began: 
                     
-                    self.view.backgroundColor = UIColor.randomColor()
+                    let newColor = UIColor.randomColor()
+                    self.view.backgroundColor = newColor
                     
-                    //shapeMoveX.frame.origin = location
+                    guard let textPosition = textView.closestPositionToPoint(location),
+                        let wordRange = textView.tokenizer.rangeEnclosingPosition(textPosition, withGranularity: UITextGranularity.Word, inDirection: 0),
+                        let highlightedText = textView.textInRange(wordRange) else { return }
                     
-                    //ringView.frame.origin = location
-                    //bgRingView.frame.origin = location
-                    
-                    //print("began", location)
+                    let rect = textView.firstRectForRange(wordRange)
+                    self.addTextLayer(textView,rect: rect, word: highlightedText, fontSize: fontsize, roundedCorners: 2,color: newColor, alpha: 0.5)
+             
+                    if highlightedText == "Tap" {
+                        let transitionsViewController = TransitionViewController()
+                        self.presentViewController(transitionsViewController, animated: true, completion: nil)
+                        
+                    }
+                    //print("began", location, highlightedText)
                 case .Changed: 
                     
-                    timer += 0.01
-                    if timer > 1{
-                        timer = 0
-                    }
-                    print(timer)
                     
-                
-                    //print("changed", location)
+                    print("changed", location)
                 case .Ended: 
                     print("ended", location)
                 default:
                     print("tap ")
                 }   
             }.addDisposableTo(disposeBag)
-        self.view.addGestureRecognizer(longPressGesture)
+        textView.addGestureRecognizer(longPressGesture)
         
         
     }
@@ -293,7 +294,6 @@ class CircleAnimationViewController : UIViewController {
     func addLayer(shape:UIView,rect:CGRect,roundedCorners:CGFloat, color:UIColor) -> UIView
     {
         
-        //print(rect.origin,self.label.frame.origin)
         let shadowLayer = CAShapeLayer()
         shadowLayer.frame = rect
         shadowLayer.cornerRadius = roundedCorners // 5
@@ -309,29 +309,26 @@ class CircleAnimationViewController : UIViewController {
         
         return shape
     }
-    func addTextLayer(rect:CGRect, word:String,fontSize:CGFloat,roundedCorners:CGFloat,alpha:CGFloat) -> UILabel
+    func addTextLayer(parentView:AnyObject,rect:CGRect, word:String,fontSize:CGFloat,roundedCorners:CGFloat,color:UIColor,alpha:CGFloat) -> UILabel
     {
         
-        let textLayer = CAShapeLayer()
         textLayer.frame = rect
         textLayer.cornerRadius = roundedCorners 
-        textLayer.backgroundColor = UIColor.randomColor().CGColor
+        textLayer.backgroundColor = color.CGColor
         textLayer.shadowColor = UIColor.blackColor().CGColor
-        textLayer.shadowOpacity = 0.6
+        textLayer.shadowOpacity = 0.5
         textLayer.shadowOffset = CGSizeMake(1, 1)
-        textLayer.shadowRadius = 3
+        textLayer.shadowRadius = 4
         
-        let label = UILabel()
         label.frame = rect
         label.textColor = UIColor.blackColor()
         label.textAlignment = NSTextAlignment.Center        
         label.text = word
         label.font = UIFont(name: "Helvetica", size: fontSize)
         label.alpha = alpha
-        label.clipsToBounds = true
         
-        self.view.layer.addSublayer(textLayer)
-        self.view.addSubview(label)
+        parentView.layer.addSublayer(textLayer)
+        parentView.addSubview(label)
          
         return label
     }
@@ -358,6 +355,21 @@ class CircleAnimationViewController : UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        print("\(NSDate()) before Animations super.viewDidAppear(animated)")
+        super.viewDidAppear(animated)
+        
+        print("\(NSDate()) after Animations super.viewDidAppear(animated)")
+    }
+    override func viewDidDisappear(animated: Bool) {
+       
+        print("\(NSDate()) before Animations super.viewDidDisappear(animated)")
+        super.viewDidAppear(animated)
+        
+        print("\(NSDate()) after Animations super.viewDidDisappear(animated)")
     }
     
 }

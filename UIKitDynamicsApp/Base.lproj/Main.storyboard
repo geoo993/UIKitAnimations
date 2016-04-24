@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Circle Animation View Controller-->
+        <!--Animations View Controller-->
         <scene sceneID="gjq-AY-E8m">
             <objects>
-                <viewController id="Hf5-av-y5w" customClass="CircleAnimationViewController" customModule="UIKitAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimationsViewController" id="Hf5-av-y5w" customClass="AnimationsViewController" customModule="UIKitAnimations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T6h-7t-FsZ"/>
                         <viewControllerLayoutGuide type="bottom" id="CQy-35-LjC"/>
@@ -22,6 +22,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMw-mT-vDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224" y="2690"/>
+        </scene>
+        <!--Transition View Controller-->
+        <scene sceneID="EvN-It-7F7">
+            <objects>
+                <viewController storyboardIdentifier="TransitionViewController" id="r5D-uN-XWv" customClass="TransitionViewController" customModule="UIKitAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8w7-Rd-pjZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="8GC-UW-ymK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6hm-OS-Lwj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KHR-tD-eqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1930" y="2690"/>
         </scene>
     </scenes>
 </document>
