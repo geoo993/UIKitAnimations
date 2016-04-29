@@ -123,9 +123,19 @@ class TransitionViewController : UIViewController {
                     //print("began", location)
                 case .Changed: 
                     
-                    let animationsViewController = AnimationsViewController()
-                    self.presentViewController(animationsViewController, animated: true, completion: nil)
+                    let animationsViewController = BlurViewController()
+                    let blurr = 
+                    self.dismissViewControllerAnimated(true) {
+                        
+                        
+                    }
+                   
+                    //self.presentViewController(animationsViewController, animated: true, completion: nil)
                     
+//                    self.transitionFromViewController( self, toViewController: animationsViewController, duration: 1.0, options: UIViewAnimationOptions.TransitionCurlUp, animations: { 
+//                        
+//                        }, completion: nil )
+                
                     //print("changed", location)
                 case .Ended: 
                     print("ended", location)

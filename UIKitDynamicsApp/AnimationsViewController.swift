@@ -271,10 +271,14 @@ class AnimationsViewController : UIViewController {
                     self.addTextLayer(textView,rect: rect, word: highlightedText, fontSize: fontsize, roundedCorners: 2,color: newColor, alpha: 0.5)
              
                     if highlightedText == "Tap" {
+//                        self.dismissViewControllerAnimated(true) {
+//                            print("transition view controller dismissed")
+//                        }
                         let transitionsViewController = TransitionViewController()
                         self.presentViewController(transitionsViewController, animated: true, completion: nil)
                         
                     }
+                   
                     //print("began", location, highlightedText)
                 case .Changed: 
                     

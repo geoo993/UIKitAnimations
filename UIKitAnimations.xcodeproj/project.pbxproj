@@ -10,6 +10,13 @@
 		C70567BA1CBE6B7300E64C89 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70567B91CBE6B7300E64C89 /* String+Ext.swift */; };
 		C709FB371CBCD49D00417B12 /* Math+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709FB351CBCD49D00417B12 /* Math+Ext.swift */; };
 		C709FB381CBCD49D00417B12 /* UIKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709FB361CBCD49D00417B12 /* UIKit+Ext.swift */; };
+		C71E4B931CD0EA1200C1AA23 /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71E4B921CD0EA1200C1AA23 /* BlurViewController.swift */; };
+		C71E4BAC1CD2842F00C1AA23 /* BlurMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71E4BAB1CD2842F00C1AA23 /* BlurMaskViewController.swift */; };
+		C71E4BAE1CD2859A00C1AA23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71E4BAD1CD2859A00C1AA23 /* CoreGraphics.framework */; };
+		C71E4BB11CD2866100C1AA23 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71E4BB01CD2866100C1AA23 /* GPUImage.framework */; };
+		C71E4BB31CD2867600C1AA23 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = C71E4BB21CD2867600C1AA23 /* Images */; };
+		C71E4BBA1CD2983900C1AA23 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71E4BB91CD2983900C1AA23 /* UIImageEffects.swift */; };
+		C71E4BC11CD3341700C1AA23 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71E4BC01CD3341700C1AA23 /* RadialGradientLayer.swift */; };
 		C71F7D7B1CB80BAF009211CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71F7D7A1CB80BAF009211CC /* AppDelegate.swift */; };
 		C71F7D801CB80BAF009211CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F7D7E1CB80BAF009211CC /* Main.storyboard */; };
 		C71F7D821CB80BAF009211CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71F7D811CB80BAF009211CC /* Assets.xcassets */; };
@@ -27,6 +34,7 @@
 		C734B82D1CCC016200654387 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B82C1CCC016200654387 /* CircleView.swift */; };
 		C734B8311CCC0AD800654387 /* RingAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B8301CCC0AD800654387 /* RingAround.swift */; };
 		C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */; };
+		C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0A54A1CD36AC90009837D /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +235,13 @@
 		C70567B91CBE6B7300E64C89 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		C709FB351CBCD49D00417B12 /* Math+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Math+Ext.swift"; sourceTree = "<group>"; };
 		C709FB361CBCD49D00417B12 /* UIKit+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Ext.swift"; sourceTree = "<group>"; };
+		C71E4B921CD0EA1200C1AA23 /* BlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
+		C71E4BAB1CD2842F00C1AA23 /* BlurMaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurMaskViewController.swift; sourceTree = "<group>"; };
+		C71E4BAD1CD2859A00C1AA23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C71E4BB01CD2866100C1AA23 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
+		C71E4BB21CD2867600C1AA23 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = SOURCE_ROOT; };
+		C71E4BB91CD2983900C1AA23 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
+		C71E4BC01CD3341700C1AA23 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
 		C71F7D771CB80BAF009211CC /* UIKitAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71F7D7A1CB80BAF009211CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C71F7D7F1CB80BAF009211CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -244,6 +259,7 @@
 		C734B8301CCC0AD800654387 /* RingAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingAround.swift; sourceTree = "<group>"; };
 		C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		C78C5CF01CBF954200DC359C /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; };
+		C7A0A54A1CD36AC90009837D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +267,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71E4BAE1CD2859A00C1AA23 /* CoreGraphics.framework in Frameworks */,
+				C71E4BB11CD2866100C1AA23 /* GPUImage.framework in Frameworks */,
 				C71F7DF31CB80D3E009211CC /* RxCocoa.framework in Frameworks */,
 				C71F7DEF1CB80D3E009211CC /* RxSwift.framework in Frameworks */,
 				C71F7DF71CB80D3F009211CC /* RxBlocking.framework in Frameworks */,
@@ -282,6 +300,10 @@
 				C734B82C1CCC016200654387 /* CircleView.swift */,
 				C734B8301CCC0AD800654387 /* RingAround.swift */,
 				C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */,
+				C71E4B921CD0EA1200C1AA23 /* BlurViewController.swift */,
+				C71E4BAB1CD2842F00C1AA23 /* BlurMaskViewController.swift */,
+				C71E4BC01CD3341700C1AA23 /* RadialGradientLayer.swift */,
+				C7A0A54A1CD36AC90009837D /* GradientView.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -306,8 +328,18 @@
 			isa = PBXGroup;
 			children = (
 				C709FB361CBCD49D00417B12 /* UIKit+Ext.swift */,
+				C71E4BB91CD2983900C1AA23 /* UIImageEffects.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		C71E4BAF1CD285B200C1AA23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C71E4BB01CD2866100C1AA23 /* GPUImage.framework */,
+				C71E4BAD1CD2859A00C1AA23 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C71F7D6E1CB80BAF009211CC = {
@@ -318,6 +350,7 @@
 				C71F7DED1CB80C1A009211CC /* Playgrounds */,
 				C71F7D791CB80BAF009211CC /* UIKitAnimationsApp */,
 				C71F7D781CB80BAF009211CC /* Products */,
+				C71E4BAF1CD285B200C1AA23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,6 +376,7 @@
 				C71F7D811CB80BAF009211CC /* Assets.xcassets */,
 				C71F7D831CB80BAF009211CC /* LaunchScreen.storyboard */,
 				C71F7D861CB80BAF009211CC /* Info.plist */,
+				C71E4BB21CD2867600C1AA23 /* Images */,
 			);
 			name = UIKitAnimationsApp;
 			path = UIKitDynamicsApp;
@@ -661,6 +695,7 @@
 				C71F7D821CB80BAF009211CC /* Assets.xcassets in Resources */,
 				C71F7DAA1CB80BD9009211CC /* Cartfile in Resources */,
 				C71F7DAB1CB80BD9009211CC /* Cartfile.resolved in Resources */,
+				C71E4BB31CD2867600C1AA23 /* Images in Resources */,
 				C71F7D801CB80BAF009211CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,11 +722,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C709FB381CBCD49D00417B12 /* UIKit+Ext.swift in Sources */,
+				C71E4BC11CD3341700C1AA23 /* RadialGradientLayer.swift in Sources */,
 				C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */,
 				C734B8141CCC004600654387 /* AnimationsViewController.swift in Sources */,
+				C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */,
+				C71E4B931CD0EA1200C1AA23 /* BlurViewController.swift in Sources */,
 				C72BC11C1CC1232A0012BDFC /* HomeViewController.swift in Sources */,
 				C71F7D7B1CB80BAF009211CC /* AppDelegate.swift in Sources */,
+				C71E4BAC1CD2842F00C1AA23 /* BlurMaskViewController.swift in Sources */,
 				C734B8311CCC0AD800654387 /* RingAround.swift in Sources */,
+				C71E4BBA1CD2983900C1AA23 /* UIImageEffects.swift in Sources */,
 				C70567BA1CBE6B7300E64C89 /* String+Ext.swift in Sources */,
 				C734B82D1CCC016200654387 /* CircleView.swift in Sources */,
 				C709FB371CBCD49D00417B12 /* Math+Ext.swift in Sources */,
@@ -851,7 +891,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = UIKitDynamicsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
@@ -864,7 +909,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = UIKitDynamicsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
