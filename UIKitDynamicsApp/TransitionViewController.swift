@@ -104,7 +104,7 @@ class TransitionViewController : UIViewController {
                     
                     print(transitionIndex)
                     // with no animation block, and a completion block set to 'nil' this makes a single line of code  
-                    UIView.transitionFromView(views.frontView, toView: views.backView, duration: 0.2, options: [transitionOptions[transitionIndex],.Autoreverse,.Repeat], completion: nil)
+                    UIView.transitionFromView(views.frontView, toView: views.backView, duration: 2, options: [transitionOptions[transitionIndex],.Autoreverse,.Repeat], completion: nil)
     
 //                    UIView.transitionWithView(self.container, duration: 0.5, options: transitionOptions, animations: {
 //                        
