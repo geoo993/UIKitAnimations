@@ -29,13 +29,13 @@ class TransitionViewController : UIViewController {
         self.view.backgroundColor = UIColor.randomColor()
         
         // set container frame and add to the screen
-        self.container.frame = CGRect(x: 40, y: 150, width: 300, height: 300)
+        self.container.frame = CGRect(x: 30, y: 150, width: 250, height: 250)
         self.view.addSubview(container)
         
         // set red square frame up
         // we want the blue square to have the same position as redSquare 
         // so lets just reuse blueSquare.frame
-        self.redSquare.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        self.redSquare.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
         let redText = UILabel(frame: self.redSquare.frame)
         redText.text = "  RED"
         redText.font = redText.font?.fontWithSize(100)

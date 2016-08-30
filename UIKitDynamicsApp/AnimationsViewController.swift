@@ -158,37 +158,37 @@ class AnimationsViewController : UIViewController {
         
         var shapeRotate = UIView()
         shapeRotate = addLayer(shapeRotate, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        shapeRotate.frame.origin = CGPoint(x: 320, y: 585)
+        shapeRotate.frame.origin = CGPoint(x: 300, y: 495)
         view.addSubview(shapeRotate)
         rotationAnimation(shapeRotate,duration: 5)
         
         var shapeFade = UIView()
         shapeFade = addLayer(shapeFade, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        shapeFade.frame.origin = CGPoint(x: 220, y: 585)
+        shapeFade.frame.origin = CGPoint(x: 200, y: 495)
         view.addSubview(shapeFade)
         fadeInOutAnimation(shapeFade, duration: 2.0)
         
         let shapeBorderColor = UIView(frame: rect)
         let borderColor = UIColor.randomColor()
-        shapeBorderColor.frame.origin = CGPoint(x: 20, y: 560)
+        shapeBorderColor.frame.origin = CGPoint(x: 0, y: 470)
         view.addSubview(shapeBorderColor)
         borderColorAnimation(shapeBorderColor,startColor: borderColor,toColor: UIColor.randomColor(), duration: 1.0)
         
         let shapeColor = UIView(frame: rect)
         let colorr = UIColor.randomColor()
-        shapeColor.frame.origin = CGPoint(x: 110, y: 560)
+        shapeColor.frame.origin = CGPoint(x: 90, y: 470)
         view.addSubview(shapeColor)
         colorAnimation(shapeColor,startColor: colorr,toColor: UIColor.randomColor(), duration: 1.0)
            
         
         var mover = UIView()
         mover = addLayer(mover, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        mover.frame.origin = CGPoint(x: 50, y: 470)
+        mover.frame.origin = CGPoint(x: 30, y: 380)
         view.addSubview(mover)
         
         var mover2 = UIView()
         mover2 = addLayer(mover2, rect: rect, roundedCorners: 5, color: UIColor.randomColor())
-        mover2.frame.origin = CGPoint(x: 50, y: 520)
+        mover2.frame.origin = CGPoint(x: 30, y: 430)
         view.addSubview(mover2)
         movingAnimation(mover,shape2: mover2, duration: 5.0)
     
@@ -237,9 +237,9 @@ class AnimationsViewController : UIViewController {
         
         
         let text = "Hello George, welcome home. Tap here to change color "
-        let fontsize :CGFloat = 13
-        let pos = CGPoint(x: 10, y: 630)
-        let textView = UITextView(frame: CGRect(x: pos.x, y: pos.y, width: 350, height: 30))
+        let fontsize :CGFloat = 12
+        let pos = CGPoint(x: 0, y: 530)
+        let textView = UITextView(frame: CGRect(x: pos.x, y: pos.y, width: 320, height: 30))
         textView.clipsToBounds = false
         textView.text = text
         textView.font = textView.font?.fontWithSize(fontsize)
