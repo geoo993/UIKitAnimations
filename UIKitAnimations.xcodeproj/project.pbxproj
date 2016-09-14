@@ -34,7 +34,13 @@
 		C734B82D1CCC016200654387 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B82C1CCC016200654387 /* CircleView.swift */; };
 		C734B8311CCC0AD800654387 /* RingAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B8301CCC0AD800654387 /* RingAround.swift */; };
 		C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */; };
+		C788E63A1D893BCA0066AC5C /* BlurUITextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */; };
+		C788E64D1D8946300066AC5C /* UITextView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E64C1D8946300066AC5C /* UITextView+Ext.swift */; };
 		C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0A54A1CD36AC90009837D /* GradientView.swift */; };
+		C7A2C3C21D896C1800635D6C /* BlurEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2C3C11D896C1800635D6C /* BlurEffectController.swift */; };
+		C7A2C3C41D896C4A00635D6C /* MaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2C3C31D896C4A00635D6C /* MaskController.swift */; };
+		C7A2C48D1D89910000635D6C /* EasyAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A2C48A1D8990F800635D6C /* EasyAnimation.framework */; };
+		C7A2C48E1D89910000635D6C /* EasyAnimation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7A2C48A1D8990F800635D6C /* EasyAnimation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +219,27 @@
 			remoteGlobalIDString = C8093B4B1B8A71F00088E94D;
 			remoteInfo = "RxBlocking-iOS";
 		};
+		C7A2C4891D8990F800635D6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A2C4841D8990F800635D6C /* EasyAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 403482541B8E01ED006C3C7C;
+			remoteInfo = EasyAnimation;
+		};
+		C7A2C48B1D8990F800635D6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A2C4841D8990F800635D6C /* EasyAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 72A03EF91C29784A002DA467;
+			remoteInfo = "EasyAnimation tvOS";
+		};
+		C7A2C48F1D89910000635D6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A2C4841D8990F800635D6C /* EasyAnimation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 403482531B8E01ED006C3C7C;
+			remoteInfo = EasyAnimation;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -223,6 +250,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C71F7DF41CB80D3E009211CC /* RxCocoa.framework in Embed Frameworks */,
+				C7A2C48E1D89910000635D6C /* EasyAnimation.framework in Embed Frameworks */,
 				C71F7DF01CB80D3E009211CC /* RxSwift.framework in Embed Frameworks */,
 				C71F7DF81CB80D3F009211CC /* RxBlocking.framework in Embed Frameworks */,
 			);
@@ -258,8 +286,14 @@
 		C734B82C1CCC016200654387 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		C734B8301CCC0AD800654387 /* RingAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingAround.swift; sourceTree = "<group>"; };
 		C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurUITextViewViewController.swift; sourceTree = "<group>"; };
+		C788E64C1D8946300066AC5C /* UITextView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Ext.swift"; sourceTree = "<group>"; };
 		C78C5CF01CBF954200DC359C /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; };
 		C7A0A54A1CD36AC90009837D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		C7A2C3C11D896C1800635D6C /* BlurEffectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurEffectController.swift; sourceTree = "<group>"; };
+		C7A2C3C31D896C4A00635D6C /* MaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskController.swift; sourceTree = "<group>"; };
+		C7A2C4841D8990F800635D6C /* EasyAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EasyAnimation.xcodeproj; path = Carthage/Checkouts/EasyAnimation/EasyAnimation.xcodeproj; sourceTree = "<group>"; };
+		C7A2C4911D89933E00635D6C /* UIKit.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = UIKit.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C71E4BAE1CD2859A00C1AA23 /* CoreGraphics.framework in Frameworks */,
+				C7A2C48D1D89910000635D6C /* EasyAnimation.framework in Frameworks */,
 				C71E4BB11CD2866100C1AA23 /* GPUImage.framework in Frameworks */,
 				C71F7DF31CB80D3E009211CC /* RxCocoa.framework in Frameworks */,
 				C71F7DEF1CB80D3E009211CC /* RxSwift.framework in Frameworks */,
@@ -304,6 +339,9 @@
 				C71E4BAB1CD2842F00C1AA23 /* BlurMaskViewController.swift */,
 				C71E4BC01CD3341700C1AA23 /* RadialGradientLayer.swift */,
 				C7A0A54A1CD36AC90009837D /* GradientView.swift */,
+				C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */,
+				C7A2C3C11D896C1800635D6C /* BlurEffectController.swift */,
+				C7A2C3C31D896C4A00635D6C /* MaskController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -329,6 +367,7 @@
 			children = (
 				C709FB361CBCD49D00417B12 /* UIKit+Ext.swift */,
 				C71E4BB91CD2983900C1AA23 /* UIImageEffects.swift */,
+				C788E64C1D8946300066AC5C /* UITextView+Ext.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -394,6 +433,7 @@
 		C71F7DAD1CB80BEC009211CC /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				C7A2C4841D8990F800635D6C /* EasyAnimation.xcodeproj */,
 				C71F7DAE1CB80C02009211CC /* Rx.xcodeproj */,
 			);
 			name = Dependencies;
@@ -430,8 +470,18 @@
 			isa = PBXGroup;
 			children = (
 				C78C5CF01CBF954200DC359C /* Observables.playground */,
+				C7A2C4911D89933E00635D6C /* UIKit.playground */,
 			);
 			name = Playgrounds;
+			sourceTree = "<group>";
+		};
+		C7A2C4851D8990F800635D6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7A2C48A1D8990F800635D6C /* EasyAnimation.framework */,
+				C7A2C48C1D8990F800635D6C /* EasyAnimation.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +502,7 @@
 				C71F7DF21CB80D3E009211CC /* PBXTargetDependency */,
 				C71F7DF61CB80D3E009211CC /* PBXTargetDependency */,
 				C71F7DFA1CB80D3F009211CC /* PBXTargetDependency */,
+				C7A2C4901D89910000635D6C /* PBXTargetDependency */,
 			);
 			name = UIKitAnimations;
 			productName = UIKitDynamicsApp;
@@ -529,6 +580,10 @@
 			productRefGroup = C71F7D781CB80BAF009211CC /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = C7A2C4851D8990F800635D6C /* Products */;
+					ProjectRef = C7A2C4841D8990F800635D6C /* EasyAnimation.xcodeproj */;
+				},
 				{
 					ProductGroup = C71F7DAF1CB80C02009211CC /* Products */;
 					ProjectRef = C71F7DAE1CB80C02009211CC /* Rx.xcodeproj */;
@@ -684,6 +739,20 @@
 			remoteRef = C71F7DEB1CB80C03009211CC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		C7A2C48A1D8990F800635D6C /* EasyAnimation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EasyAnimation.framework;
+			remoteRef = C7A2C4891D8990F800635D6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C7A2C48C1D8990F800635D6C /* EasyAnimation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EasyAnimation.framework;
+			remoteRef = C7A2C48B1D8990F800635D6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -726,15 +795,19 @@
 				C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */,
 				C734B8141CCC004600654387 /* AnimationsViewController.swift in Sources */,
 				C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */,
+				C7A2C3C21D896C1800635D6C /* BlurEffectController.swift in Sources */,
 				C71E4B931CD0EA1200C1AA23 /* BlurViewController.swift in Sources */,
 				C72BC11C1CC1232A0012BDFC /* HomeViewController.swift in Sources */,
 				C71F7D7B1CB80BAF009211CC /* AppDelegate.swift in Sources */,
 				C71E4BAC1CD2842F00C1AA23 /* BlurMaskViewController.swift in Sources */,
+				C788E64D1D8946300066AC5C /* UITextView+Ext.swift in Sources */,
 				C734B8311CCC0AD800654387 /* RingAround.swift in Sources */,
 				C71E4BBA1CD2983900C1AA23 /* UIImageEffects.swift in Sources */,
 				C70567BA1CBE6B7300E64C89 /* String+Ext.swift in Sources */,
+				C7A2C3C41D896C4A00635D6C /* MaskController.swift in Sources */,
 				C734B82D1CCC016200654387 /* CircleView.swift in Sources */,
 				C709FB371CBCD49D00417B12 /* Math+Ext.swift in Sources */,
+				C788E63A1D893BCA0066AC5C /* BlurUITextViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +852,11 @@
 			isa = PBXTargetDependency;
 			name = "RxBlocking-iOS";
 			targetProxy = C71F7DF91CB80D3F009211CC /* PBXContainerItemProxy */;
+		};
+		C7A2C4901D89910000635D6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EasyAnimation;
+			targetProxy = C7A2C48F1D89910000635D6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

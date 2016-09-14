@@ -11,6 +11,9 @@
 		8202480B1C1BA8A50020B7EF /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820248091C1BA8A50020B7EF /* Unit.swift */; };
 		8202480F1C1BA8F60020B7EF /* UnitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202480E1C1BA8F60020B7EF /* UnitSpec.swift */; };
 		820248101C1BA8F60020B7EF /* UnitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8202480E1C1BA8F60020B7EF /* UnitSpec.swift */; };
+		8214F6851CBB56FE004AF6F2 /* StreamSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8214F6841CBB56FE004AF6F2 /* StreamSpec.swift */; };
+		8214F6861CBB56FE004AF6F2 /* StreamSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8214F6841CBB56FE004AF6F2 /* StreamSpec.swift */; };
+		8214F6871CBB56FE004AF6F2 /* StreamSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8214F6841CBB56FE004AF6F2 /* StreamSpec.swift */; };
 		821B76B01BC43C1000AF97D6 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B76AF1BC43C1000AF97D6 /* Operators.swift */; };
 		821B76C51BC43DF000AF97D6 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821B76BC1BC43DE100AF97D6 /* SwiftCheck.framework */; };
 		821B76C81BC43DF900AF97D6 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821B76BC1BC43DE100AF97D6 /* SwiftCheck.framework */; };
@@ -56,7 +59,6 @@
 		8240CD581C3A397800EF4D29 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8240CD591C3A397800EF4D29 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820248091C1BA8A50020B7EF /* Unit.swift */; };
 		8240CD5A1C3A397800EF4D29 /* Writer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BB55B1B7E71B600D3327A /* Writer.swift */; };
-		8240CD5B1C3A397800EF4D29 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE37D66B1C066E6000D6289B /* Reader.swift */; };
 		8240CD5C1C3A397800EF4D29 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88FDF1A71DFC5003D53CF /* ArrayExt.swift */; };
 		8240CD5D1C3A397800EF4D29 /* ArrowExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3175D1B805EA7007B80E2 /* ArrowExt.swift */; };
 		8240CD5E1C3A397800EF4D29 /* CharacterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88FE61A71DFC5003D53CF /* CharacterExt.swift */; };
@@ -127,7 +129,6 @@
 		8240CE0E1C3A425C00EF4D29 /* Those.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8900B1A71DFC5003D53CF /* Those.swift */; };
 		8240CE0F1C3A425C00EF4D29 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820248091C1BA8A50020B7EF /* Unit.swift */; };
 		8240CE101C3A425C00EF4D29 /* Writer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BB55B1B7E71B600D3327A /* Writer.swift */; };
-		8240CE111C3A425C00EF4D29 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE37D66B1C066E6000D6289B /* Reader.swift */; };
 		8240CE121C3A425C00EF4D29 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88FDF1A71DFC5003D53CF /* ArrayExt.swift */; };
 		8240CE131C3A425C00EF4D29 /* ArrowExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3175D1B805EA7007B80E2 /* ArrowExt.swift */; };
 		8240CE141C3A425C00EF4D29 /* CharacterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A88FE61A71DFC5003D53CF /* CharacterExt.swift */; };
@@ -162,6 +163,14 @@
 		82E5A65D1B53666000255137 /* NonEmptyListSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E5A65B1B53666000255137 /* NonEmptyListSpec.swift */; };
 		82EBC6AF1B7AA4CC004AF7B6 /* Ratio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBC6AE1B7AA4CC004AF7B6 /* Ratio.swift */; };
 		82EBC6B01B7AA4CC004AF7B6 /* Ratio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBC6AE1B7AA4CC004AF7B6 /* Ratio.swift */; };
+		82F251181CD891A500D292AE /* Monoidal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F251171CD891A500D292AE /* Monoidal.swift */; };
+		82F251191CD891A500D292AE /* Monoidal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F251171CD891A500D292AE /* Monoidal.swift */; };
+		82F2511A1CD891A500D292AE /* Monoidal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F251171CD891A500D292AE /* Monoidal.swift */; };
+		82F2511B1CD891A500D292AE /* Monoidal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F251171CD891A500D292AE /* Monoidal.swift */; };
+		82F2511D1CD89D4E00D292AE /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2511C1CD89D4E00D292AE /* Reader.swift */; };
+		82F2511E1CD89D4E00D292AE /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2511C1CD89D4E00D292AE /* Reader.swift */; };
+		82F2511F1CD89D4E00D292AE /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2511C1CD89D4E00D292AE /* Reader.swift */; };
+		82F251201CD89D4E00D292AE /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2511C1CD89D4E00D292AE /* Reader.swift */; };
 		82F3175E1B805EA7007B80E2 /* ArrowExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3175D1B805EA7007B80E2 /* ArrowExt.swift */; };
 		82F3175F1B805EA7007B80E2 /* ArrowExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3175D1B805EA7007B80E2 /* ArrowExt.swift */; };
 		82F317631B81090B007B80E2 /* ArrowExtSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F317621B81090B007B80E2 /* ArrowExtSpec.swift */; };
@@ -266,8 +275,6 @@
 		84DF75CF1B0BD1D400C912B0 /* TupleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8900D1A71DFC5003D53CF /* TupleExt.swift */; };
 		84DF76301B0BDCE800C912B0 /* Swiftz.h in Headers */ = {isa = PBXBuildFile; fileRef = 84DF762F1B0BDCE800C912B0 /* Swiftz.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84DF76311B0BDCE800C912B0 /* Swiftz.h in Headers */ = {isa = PBXBuildFile; fileRef = 84DF762F1B0BDCE800C912B0 /* Swiftz.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE37D66C1C066E6000D6289B /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE37D66B1C066E6000D6289B /* Reader.swift */; };
-		DE37D66D1C066E6000D6289B /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE37D66B1C066E6000D6289B /* Reader.swift */; };
 		DE37D6711C06BE9C00D6289B /* ReaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE37D6701C06BE9C00D6289B /* ReaderSpec.swift */; };
 		DE37D6721C06BE9C00D6289B /* ReaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE37D6701C06BE9C00D6289B /* ReaderSpec.swift */; };
 		DEC686D71C0260C70057B393 /* DictionaryExtSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC686D61C0260C70057B393 /* DictionaryExtSpec.swift */; };
@@ -387,6 +394,7 @@
 /* Begin PBXFileReference section */
 		820248091C1BA8A50020B7EF /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		8202480E1C1BA8F60020B7EF /* UnitSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitSpec.swift; sourceTree = "<group>"; };
+		8214F6841CBB56FE004AF6F2 /* StreamSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSpec.swift; sourceTree = "<group>"; };
 		821B76AF1BC43C1000AF97D6 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Carthage/Checkouts/Operadics/Operators.swift; sourceTree = SOURCE_ROOT; };
 		821B76B41BC43DE100AF97D6 /* SwiftCheck.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftCheck.xcodeproj; path = Carthage/Checkouts/SwiftCheck/SwiftCheck.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8240CD1C1C3A395F00EF4D29 /* Swiftz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,6 +413,8 @@
 		82E51BA41B5D96BD003CA361 /* ProxySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxySpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82E5A65B1B53666000255137 /* NonEmptyListSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonEmptyListSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82EBC6AE1B7AA4CC004AF7B6 /* Ratio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ratio.swift; sourceTree = "<group>"; usesTabs = 1; };
+		82F251171CD891A500D292AE /* Monoidal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monoidal.swift; sourceTree = "<group>"; };
+		82F2511C1CD89D4E00D292AE /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		82F3175D1B805EA7007B80E2 /* ArrowExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowExt.swift; sourceTree = "<group>"; usesTabs = 1; };
 		82F317621B81090B007B80E2 /* ArrowExtSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowExtSpec.swift; sourceTree = "<group>"; usesTabs = 1; };
 		8480AB4D1A7B448A00C6162D /* Sections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sections.swift; path = Carthage/Checkouts/Swiftx/Swiftx/Sections.swift; sourceTree = SOURCE_ROOT; usesTabs = 1; };
@@ -461,7 +471,6 @@
 		84DF751E1B0BD17700C912B0 /* Swiftz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF75281B0BD17700C912B0 /* Swiftz-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swiftz-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF762F1B0BDCE800C912B0 /* Swiftz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swiftz.h; path = Swiftz/Swiftz.h; sourceTree = "<group>"; usesTabs = 1; };
-		DE37D66B1C066E6000D6289B /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		DE37D6701C06BE9C00D6289B /* ReaderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderSpec.swift; sourceTree = "<group>"; };
 		DEC686D61C0260C70057B393 /* DictionaryExtSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -623,9 +632,12 @@
 				84A88FDE1A71DFC5003D53CF /* Applicative.swift */,
 				84A88FE11A71DFC5003D53CF /* Arrow.swift */,
 				84A88FE41A71DFC5003D53CF /* Category.swift */,
+				84A88FE81A71DFC5003D53CF /* Copointed.swift */,
 				84A88FE71A71DFC5003D53CF /* Comonad.swift */,
 				84A88FE91A71DFC5003D53CF /* Curry.swift */,
 				84A88FFB1A71DFC5003D53CF /* Monad.swift */,
+				82F251171CD891A500D292AE /* Monoidal.swift */,
+				84A890041A71DFC5003D53CF /* Pointed.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -651,7 +663,6 @@
 				84A88FE21A71DFC5003D53CF /* Bifunctor.swift */,
 				84A88FE31A71DFC5003D53CF /* Bounded.swift */,
 				8273EFA61B84D7DA008BA037 /* Const.swift */,
-				84A88FE81A71DFC5003D53CF /* Copointed.swift */,
 				8496F0E61B37571F00896D26 /* Foldable.swift */,
 				84A88FEC1A71DFC5003D53CF /* Function.swift */,
 				84A88FED1A71DFC5003D53CF /* Functor.swift */,
@@ -662,9 +673,9 @@
 				84A88FFC1A71DFC5003D53CF /* Monoid.swift */,
 				84A88FFE1A71DFC5003D53CF /* NonEmptyList.swift */,
 				84A890011A71DFC5003D53CF /* Num.swift */,
-				84A890041A71DFC5003D53CF /* Pointed.swift */,
 				82E51B9F1B5D9413003CA361 /* Proxy.swift */,
 				82EBC6AE1B7AA4CC004AF7B6 /* Ratio.swift */,
+				82F2511C1CD89D4E00D292AE /* Reader.swift */,
 				84A890071A71DFC5003D53CF /* Semigroup.swift */,
 				84961FB41A998976004A186A /* State.swift */,
 				825C0E421B85681C0026E738 /* Stream.swift */,
@@ -672,7 +683,6 @@
 				84A8900B1A71DFC5003D53CF /* Those.swift */,
 				820248091C1BA8A50020B7EF /* Unit.swift */,
 				828BB55B1B7E71B600D3327A /* Writer.swift */,
-				DE37D66B1C066E6000D6289B /* Reader.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -703,6 +713,7 @@
 				82E5A65B1B53666000255137 /* NonEmptyListSpec.swift */,
 				82E51BA41B5D96BD003CA361 /* ProxySpec.swift */,
 				84BB57631AA12D2200214BC5 /* StateSpec.swift */,
+				8214F6841CBB56FE004AF6F2 /* StreamSpec.swift */,
 				84A88FC61A71DFA0003D53CF /* ThoseSpec.swift */,
 				8202480E1C1BA8F60020B7EF /* UnitSpec.swift */,
 				828BB5601B7E77C700D3327A /* WriterSpec.swift */,
@@ -901,9 +912,11 @@
 					};
 					84A88F971A71DF7F003D53CF = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 					};
 					84A88FA21A71DF7F003D53CF = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 					};
 					84DF751D1B0BD17700C912B0 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1052,6 +1065,7 @@
 				8240CD381C3A397800EF4D29 /* Error.swift in Sources */,
 				8240CD391C3A397800EF4D29 /* Nothing.swift in Sources */,
 				8240CD3A1C3A397800EF4D29 /* Optional.swift in Sources */,
+				82F2511A1CD891A500D292AE /* Monoidal.swift in Sources */,
 				8240CD3B1C3A397800EF4D29 /* Sections.swift in Sources */,
 				8240CD3C1C3A397800EF4D29 /* Applicative.swift in Sources */,
 				8240CD3D1C3A397800EF4D29 /* Arrow.swift in Sources */,
@@ -1075,6 +1089,7 @@
 				8240CD4F1C3A397800EF4D29 /* Num.swift in Sources */,
 				8240CD501C3A397800EF4D29 /* Pointed.swift in Sources */,
 				8240CD511C3A397800EF4D29 /* Proxy.swift in Sources */,
+				82F2511F1CD89D4E00D292AE /* Reader.swift in Sources */,
 				8240CD521C3A397800EF4D29 /* Ratio.swift in Sources */,
 				8240CD531C3A397800EF4D29 /* Semigroup.swift in Sources */,
 				8240CD541C3A397800EF4D29 /* State.swift in Sources */,
@@ -1084,7 +1099,6 @@
 				8240CD581C3A397800EF4D29 /* (null) in Sources */,
 				8240CD591C3A397800EF4D29 /* Unit.swift in Sources */,
 				8240CD5A1C3A397800EF4D29 /* Writer.swift in Sources */,
-				8240CD5B1C3A397800EF4D29 /* Reader.swift in Sources */,
 				8240CD5C1C3A397800EF4D29 /* ArrayExt.swift in Sources */,
 				8240CD5D1C3A397800EF4D29 /* ArrowExt.swift in Sources */,
 				8240CD5E1C3A397800EF4D29 /* CharacterExt.swift in Sources */,
@@ -1107,6 +1121,7 @@
 				8240CD691C3A398B00EF4D29 /* IdentitySpec.swift in Sources */,
 				8240CD6A1C3A398B00EF4D29 /* ListSpec.swift in Sources */,
 				8240CD6B1C3A398B00EF4D29 /* MonoidSpec.swift in Sources */,
+				8214F6871CBB56FE004AF6F2 /* StreamSpec.swift in Sources */,
 				8240CD6C1C3A398B00EF4D29 /* NonEmptyListSpec.swift in Sources */,
 				8240CD6D1C3A398B00EF4D29 /* ProxySpec.swift in Sources */,
 				8240CD6E1C3A398B00EF4D29 /* StateSpec.swift in Sources */,
@@ -1139,7 +1154,9 @@
 				8240CDF31C3A425C00EF4D29 /* Applicative.swift in Sources */,
 				8240CDF41C3A425C00EF4D29 /* Arrow.swift in Sources */,
 				8240CDF51C3A425C00EF4D29 /* Category.swift in Sources */,
+				82F2511B1CD891A500D292AE /* Monoidal.swift in Sources */,
 				8240CDF61C3A425C00EF4D29 /* Comonad.swift in Sources */,
+				82F251201CD89D4E00D292AE /* Reader.swift in Sources */,
 				8240CDF71C3A425C00EF4D29 /* Curry.swift in Sources */,
 				8240CDF81C3A425C00EF4D29 /* Monad.swift in Sources */,
 				8240CDF91C3A425C00EF4D29 /* Bifunctor.swift in Sources */,
@@ -1166,7 +1183,6 @@
 				8240CE0E1C3A425C00EF4D29 /* Those.swift in Sources */,
 				8240CE0F1C3A425C00EF4D29 /* Unit.swift in Sources */,
 				8240CE101C3A425C00EF4D29 /* Writer.swift in Sources */,
-				8240CE111C3A425C00EF4D29 /* Reader.swift in Sources */,
 				8240CE121C3A425C00EF4D29 /* ArrayExt.swift in Sources */,
 				8240CE131C3A425C00EF4D29 /* ArrowExt.swift in Sources */,
 				8240CE141C3A425C00EF4D29 /* CharacterExt.swift in Sources */,
@@ -1194,7 +1210,9 @@
 				82E51BA01B5D9413003CA361 /* Proxy.swift in Sources */,
 				84A8904A1A71DFE5003D53CF /* Either.swift in Sources */,
 				82EBC6AF1B7AA4CC004AF7B6 /* Ratio.swift in Sources */,
+				82F251181CD891A500D292AE /* Monoidal.swift in Sources */,
 				84A890201A71DFC5003D53CF /* HList.swift in Sources */,
+				82F2511D1CD89D4E00D292AE /* Reader.swift in Sources */,
 				84A890181A71DFC5003D53CF /* Copointed.swift in Sources */,
 				84A8900E1A71DFC5003D53CF /* Applicative.swift in Sources */,
 				84A8903B1A71DFC5003D53CF /* Those.swift in Sources */,
@@ -1224,7 +1242,6 @@
 				8496F0E71B37571F00896D26 /* Foldable.swift in Sources */,
 				84A890391A71DFC5003D53CF /* StringExt.swift in Sources */,
 				84A8904D1A71DFE5003D53CF /* Nothing.swift in Sources */,
-				DE37D66C1C066E6000D6289B /* Reader.swift in Sources */,
 				84A890131A71DFC5003D53CF /* Bounded.swift in Sources */,
 				84A890141A71DFC5003D53CF /* Category.swift in Sources */,
 				84A890481A71DFE5003D53CF /* Array.swift in Sources */,
@@ -1244,6 +1261,7 @@
 				84A88FCF1A71DFA0003D53CF /* HListSpec.swift in Sources */,
 				DE37D6711C06BE9C00D6289B /* ReaderSpec.swift in Sources */,
 				82F317631B81090B007B80E2 /* ArrowExtSpec.swift in Sources */,
+				8214F6851CBB56FE004AF6F2 /* StreamSpec.swift in Sources */,
 				826A12F11B3DF9A300547FD4 /* FunctionSpec.swift in Sources */,
 				8273EFAA1B84D9CC008BA037 /* IdentitySpec.swift in Sources */,
 				84A88FDB1A71DFA0003D53CF /* ThoseSpec.swift in Sources */,
@@ -1276,7 +1294,9 @@
 				84DF75A91B0BD1D400C912B0 /* Category.swift in Sources */,
 				82E51BA11B5D9413003CA361 /* Proxy.swift in Sources */,
 				84DF75AA1B0BD1D400C912B0 /* Comonad.swift in Sources */,
+				82F251191CD891A500D292AE /* Monoidal.swift in Sources */,
 				82EBC6B01B7AA4CC004AF7B6 /* Ratio.swift in Sources */,
+				82F2511E1CD89D4E00D292AE /* Reader.swift in Sources */,
 				84DF75AB1B0BD1D400C912B0 /* Curry.swift in Sources */,
 				84DF75B21B0BD1D400C912B0 /* Monad.swift in Sources */,
 				84DF75B51B0BD1D400C912B0 /* Bifunctor.swift in Sources */,
@@ -1306,7 +1326,6 @@
 				84DF75C51B0BD1D400C912B0 /* SYB.swift in Sources */,
 				84DF75C61B0BD1D400C912B0 /* Those.swift in Sources */,
 				84DF75C81B0BD1D400C912B0 /* ArrayExt.swift in Sources */,
-				DE37D66D1C066E6000D6289B /* Reader.swift in Sources */,
 				84DF75C91B0BD1D400C912B0 /* CharacterExt.swift in Sources */,
 				84DF75CA1B0BD1D400C912B0 /* DictionaryExt.swift in Sources */,
 				84DF75CD1B0BD1D400C912B0 /* OptionalExt.swift in Sources */,
@@ -1326,6 +1345,7 @@
 				84A53D761B1A900900E8A107 /* HListSpec.swift in Sources */,
 				DE37D6721C06BE9C00D6289B /* ReaderSpec.swift in Sources */,
 				82F317641B81090B007B80E2 /* ArrowExtSpec.swift in Sources */,
+				8214F6861CBB56FE004AF6F2 /* StreamSpec.swift in Sources */,
 				826A12F21B3DF9A300547FD4 /* FunctionSpec.swift in Sources */,
 				8273EFAB1B84D9CC008BA037 /* IdentitySpec.swift in Sources */,
 				84A53D781B1A900900E8A107 /* ListSpec.swift in Sources */,
@@ -1394,8 +1414,9 @@
 				PRODUCT_NAME = Swiftz;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1414,8 +1435,9 @@
 				PRODUCT_NAME = Swiftz;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1431,7 +1453,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftz-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
+				SWIFT_VERSION = 2.3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1445,7 +1468,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.typelift.Swiftz-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
+				SWIFT_VERSION = 2.3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1467,8 +1491,9 @@
 				PRODUCT_NAME = Swiftz;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1488,9 +1513,10 @@
 				PRODUCT_NAME = Swiftz;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -1530,6 +1556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1570,6 +1597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -1598,6 +1626,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1620,6 +1649,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -1642,6 +1672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1659,6 +1690,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -1686,6 +1718,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1709,6 +1742,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1730,11 +1764,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SwiftzTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1749,11 +1784,12 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = SwiftzTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.maxs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

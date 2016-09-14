@@ -26,11 +26,13 @@ This project tries to be consistent with [ReactiveX.io](http://reactivex.io/). T
 # Observables aka Sequences
 
 ## Basics
-The [Equivalence](MathBehindRx.md) of observer patterns (`Observable<Element>`) and sequences (`Generator`s)
-is one of the most important things to understand about Rx.
+The [equivalence](MathBehindRx.md) of observer pattern (`Observable<Element>` sequence) and normal sequences (`SequenceType`) is the most important thing to understand about Rx.
 
-The observer pattern is needed because we want to model asynchronous behavior.
-That equivalence enables the implementation of high level sequence operations as operators on `Observable`s.
+**Every `Observable` sequence is just a sequence. The key advantage for an `Observable` vs Swift's `SequenceType` is that it can also receive elements asynchronously. This is the kernel of the RxSwift, documentation from here is about ways that we expand on that idea.**
+
+* `Observable`(`ObservableType`) is equivalent to `SequenceType`
+* `ObservableType.subscribe` method is equivalent to `SequenceType.generate` method.
+* Observer (callback) needs to be passed to `ObservableType.subscribe` method to receive sequence elements instead of calling `next()` on the returned generator.
 
 Sequences are a simple, familiar concept that is **easy to visualize**.
 
@@ -90,7 +92,7 @@ protocol ObserverType {
 }
 ```
 
-**When a sequence sends the `Complete` or `Error` event all internal resources that compute sequence elements will be freed.**
+**When a sequence sends the `Completed` or `Error` event all internal resources that compute sequence elements will be freed.**
 
 **To cancel production of sequence elements and free resources immediately, call `dispose` on the returned subscription.**
 
@@ -590,7 +592,7 @@ Almost all operators are demonstrated in [Playgrounds](../Rx.playground).
 
 To use playgrounds please open `Rx.xcworkspace`, build `RxSwift-OSX` scheme and then open playgrounds in `Rx.xcworkspace` tree view.
 
-In case you need an operator, and don't know how to find it there a [decision tree of operators]() http://reactivex.io/documentation/operators.html#tree).
+In case you need an operator, and don't know how to find it there a [decision tree of operators](http://reactivex.io/documentation/operators.html#tree).
 
 [Supported RxSwift operators](API.md#rxswift-supported-operators) are also grouped by function they perform, so that can also help.
 
@@ -873,7 +875,7 @@ The reason why 2 navigations are suggested is because first navigation forces lo
 
 Variable wraps a [`Subject`](http://reactivex.io/documentation/subject.html). More specifically it is a `BehaviorSubject`.  Unlike `BehaviorSubject`, it only exposes `value` interface, so variable can never terminate or fail.
 
-It will also broadcast it's current value immediately on subscription.
+It will also broadcast its current value immediately on subscription.
 
 After variable is deallocated, it will complete the observable sequence returned from `.asObservable()`.
 
@@ -1099,12 +1101,12 @@ NSURLSession.sharedSession().rx_response(myNSURLRequest)
                 return just(transform(data))
             }
             else {
-                return failWith(yourNSError)
+                return Observable.error(yourNSError)
             }
         }
         else {
             rxFatalError("response = nil")
-            return failWith(yourNSError)
+            return Observable.error(yourNSError)
         }
     }
     .subscribe { event in

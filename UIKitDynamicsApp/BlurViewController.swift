@@ -35,8 +35,10 @@ class BlurViewController : UIViewController {
        
         
         let myview = GradientView(frame: frame)
+        
+        
         //myview.setGradient(frame.origin,gradientColors: colors)
-//        imageView.addSubview(myview)
+        //imageView.addSubview(myview)
         imageView.layer.mask = myview.layer
         
 //        let screenCentre = CGPointMake(100, 100) 
@@ -103,6 +105,8 @@ class BlurViewController : UIViewController {
                 case .Changed: 
                     
                     //self.container.center = location
+                    
+                    
                     myview.center = location
                     
                     //let animationsViewController = AnimationsViewController()
@@ -123,35 +127,38 @@ class BlurViewController : UIViewController {
                 
     }
     
-    func addBlurArea(parent: AnyObject, area: CGRect) {
+    //func addBlurArea(parent: AnyObject, area: CGRect) {
         
-        let effect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        let blurView = UIVisualEffectView(effect: effect)
-        blurView.frame = CGRect(x: 0, y: 0, width: area.width, height: area.height)
+        //let effect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        //let blurView = UIVisualEffectView(effect: effect)
+        //blurView.frame = CGRect(x: 0, y: 0, width: area.width, height: area.height)
         
-        container.frame = area
-        container.alpha = 0.8
-        container.layer.cornerRadius = container.frame.size.width/2
-        container.clipsToBounds = true
-        container.addSubview(blurView)
+        //container.frame = area
+        //container.alpha = 0.8
+        //container.layer.cornerRadius = container.frame.size.width/2
+        //container.clipsToBounds = true
+        //container.addSubview(blurView)
         
-        parent.insertSubview(container, atIndex: 1)
-    }
-    func drawCircle (area:CGRect)
-    {
+        //parent.insertSubview(container, atIndex: 1)
+    //}
     
-        let circlePath = UIBezierPath(arcCenter: area.origin, radius: area.width, startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
+    //func drawCircle (area:CGRect)
+    //{
+    
+        //let circlePath = UIBezierPath(arcCenter: area.origin, radius: area.width, startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.CGPath
+        //let shapeLayer = CAShapeLayer()
+        //shapeLayer.path = circlePath.CGPath
         
-        //change the fill color
-        shapeLayer.fillColor = UIColor.clearColor().CGColor
-        //you can change the stroke color
-        shapeLayer.strokeColor = UIColor.randomColor().CGColor
-        //you can change the line width
-        shapeLayer.lineWidth = 4.0
+        ////change the fill color
+        //shapeLayer.fillColor = UIColor.clearColor().CGColor
+        ////you can change the stroke color
+        //shapeLayer.strokeColor = UIColor.randomColor().CGColor
+        ////you can change the line width
+        //shapeLayer.lineWidth = 4.0
         
-        self.view.layer.addSublayer(shapeLayer)
-    }
+        //self.view.layer.addSublayer(shapeLayer)
+    //}
+    
+    
 }

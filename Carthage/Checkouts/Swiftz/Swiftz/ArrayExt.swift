@@ -37,6 +37,26 @@ extension Array : Applicative {
 	}
 }
 
+extension Array : Cartesian {
+	public typealias FTOP = Array<()>
+	public typealias FTAB = Array<(A, B)>
+	public typealias FTABC = Array<(A, B, C)>
+	public typealias FTABCD = Array<(A, B, C, D)>
+
+	public static var unit : Array<()> { return [()] }
+	public func product<B>(r : Array<B>) -> Array<(A, B)> {
+		return self.mzip(r)
+	}
+	
+	public func product<B, C>(r : Array<B>, _ s : Array<C>) -> Array<(A, B, C)> {
+		return { x in { y in { z in (x, y, z) } } } <^> self <*> r <*> s
+	}
+	
+	public func product<B, C, D>(r : Array<B>, _ s : Array<C>, _ t : Array<D>) -> Array<(A, B, C, D)> {
+		return { x in { y in { z in { w in (x, y, z, w) } } } } <^> self <*> r <*> s <*> t
+	}
+}
+
 extension Array : ApplicativeOps {
 	public typealias C = Any
 	public typealias FC = [C]
@@ -45,15 +65,15 @@ extension Array : ApplicativeOps {
 
 	public static func liftA<B>(f : A -> B) -> [A] -> [B] {
 		typealias FAB = A -> B
-		return { a in [FAB].pure(f) <*> a }
+		return { (a : [A]) -> [B] in [FAB].pure(f) <*> a }
 	}
 
 	public static func liftA2<B, C>(f : A -> B -> C) -> [A] -> [B] -> [C] {
-		return { a in { b in f <^> a <*> b  } }
+		return { (a : [A]) -> [B] -> [C] in { (b : [B]) -> [C] in f <^> a <*> b  } }
 	}
 
 	public static func liftA3<B, C, D>(f : A -> B -> C -> D) -> [A] -> [B] -> [C] -> [D] {
-		return { a in { b in { c in f <^> a <*> b <*> c } } }
+		return { (a : [A]) -> [B] -> [C] -> [D] in { (b : [B]) -> [C] -> [D] in { (c : [C]) -> [D] in f <^> a <*> b <*> c } } }
 	}
 }
 
@@ -65,15 +85,15 @@ extension Array : Monad {
 
 extension Array : MonadOps {
 	public static func liftM<B>(f : A -> B) -> [A] -> [B] {
-		return { m1 in m1 >>- { x1 in [B].pure(f(x1)) } }
+		return { (m1 : [A]) -> [B] in m1 >>- { (x1 : A) in [B].pure(f(x1)) } }
 	}
 
 	public static func liftM2<B, C>(f : A -> B -> C) -> [A] -> [B] -> [C] {
-		return { m1 in { m2 in m1 >>- { x1 in m2 >>- { x2 in [C].pure(f(x1)(x2)) } } } }
+		return { (m1 : [A]) -> [B] -> [C] in { (m2 : [B]) -> [C] in m1 >>- { (x1 : A) in m2 >>- { (x2 : B) in [C].pure(f(x1)(x2)) } } } }
 	}
 
 	public static func liftM3<B, C, D>(f : A -> B -> C -> D) -> [A] -> [B] -> [C] -> [D] {
-		return { m1 in { m2 in { m3 in m1 >>- { x1 in m2 >>- { x2 in m3 >>- { x3 in [D].pure(f(x1)(x2)(x3)) } } } } } }
+		return { (m1 : [A]) -> [B] -> [C] -> [D] in { (m2 : [B]) -> [C] -> [D] in { (m3 : [C]) -> [D] in m1 >>- { (x1 : A) in m2 >>- { (x2 : B) in m3 >>- { (x3 : C) in [D].pure(f(x1)(x2)(x3)) } } } } } }
 	}
 }
 
@@ -96,7 +116,7 @@ extension Array : MonadPlus {
 }
 
 extension Array : MonadZip {
-	public typealias FTAB = [(A, B)]
+	public typealias FTABL = [(A, B)]
 
 	public func mzip<B>(ma : [B]) -> [(A, B)] {
 		return [(A, B)](zip(self, ma))
@@ -517,4 +537,16 @@ public func intercalate<A>(list : [A], nested : [[A]]) -> [A] {
 /// Concatenate a list of lists.
 public func concat<T>(list : [[T]]) -> [T] {
 	return list.reduce([], combine: +)
+}
+
+public func sequence<A>(ms: [Array<A>]) -> Array<[A]> {
+	if ms.isEmpty { return [] }
+	
+	return ms.reduce(Array<[A]>.pure([]), combine: { (n : [[A]], m : [A]) in
+		return n.bind { (xs : [A]) in
+			return m.bind { (x : A) in
+				return Array<[A]>.pure(xs + [x])
+			}
+		}
+	})
 }
