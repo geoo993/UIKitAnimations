@@ -557,6 +557,7 @@
 				TargetAttributes = {
 					C71F7D761CB80BAF009211CC = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					C71F7D8A1CB80BAF009211CC = {
 						CreatedOnToolsVersion = 7.3;
@@ -979,6 +980,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
 				PRODUCT_NAME = UIKitAnimations;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -997,6 +999,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
 				PRODUCT_NAME = UIKitAnimations;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

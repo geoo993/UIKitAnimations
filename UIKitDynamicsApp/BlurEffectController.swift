@@ -31,7 +31,7 @@ class BlurEffectController: UIViewController, UIScrollViewDelegate {
     }
     
     func createHeaderView() -> UIView {
-        var headerView: UIView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 60))
+        let headerView: UIView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 60))
         headerView.backgroundColor = UIColor(red:229/255.0, green:39/255.0, blue:34/255.0, alpha:0.6)
         
         let title = UILabel(frame:CGRectMake(0, 20, self.view.frame.size.width, 40))

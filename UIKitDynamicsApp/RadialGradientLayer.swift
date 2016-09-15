@@ -59,7 +59,7 @@ class RadialGradientLayer: CALayer {
         let gradient = CGGradientCreateWithColors(colorSpace, colors, [0.0,1.0])
         
         let options: CGGradientDrawingOptions = [.DrawsAfterEndLocation]
-        CGContextDrawRadialGradient(context, gradient, center, 0.0, center, radius, options)
+        CGContextDrawRadialGradient(context, gradient!, center, 0.0, center, radius, options)
     }
     
     

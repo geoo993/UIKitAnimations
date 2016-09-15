@@ -51,7 +51,7 @@ class GradientView: UIView {
         
         // Draw Path
         let path = UIBezierPath(rect: CGRectMake(0, 0, frame.width, frame.height))
-        CGContextSaveGState(context)
+        CGContextSaveGState(context!)
         path.addClip()
         
         //radius
@@ -67,9 +67,9 @@ class GradientView: UIView {
         let gradientOptions: CGGradientDrawingOptions = [.DrawsAfterEndLocation] //CGGradientDrawingOptions()
         
         //CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, gradientOptions)
-        CGContextDrawRadialGradient(context, gradient, gradientCenter, 100.0, gradientCenter, gradientRadius, gradientOptions)
+        CGContextDrawRadialGradient(context!, gradient!, gradientCenter, 100.0, gradientCenter, gradientRadius, gradientOptions)
         
-        CGContextRestoreGState(context)
+        CGContextRestoreGState(context!)
         
     }
     

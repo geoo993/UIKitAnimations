@@ -59,7 +59,7 @@ class RingAround: UIView {
         animation.fromValue = 0.0
         animation.toValue = 1.0
         
-        animation.delegate = self
+        //animation.delegate = self
         animation.removedOnCompletion = false
         animation.additive = false
         animation.fillMode = kCAFillModeForwards

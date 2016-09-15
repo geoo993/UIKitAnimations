@@ -91,7 +91,7 @@ class BlurMaskViewController :UIViewController, UIScrollViewDelegate {
         let reductionFactor: CGFloat = 1.25
         UIGraphicsBeginImageContext(CGSizeMake(view.frame.size.width/reductionFactor, view.frame.size.height/reductionFactor))
         view.drawViewHierarchyInRect(CGRectMake(0, 0, view.frame.size.width/reductionFactor, view.frame.size.height/reductionFactor), afterScreenUpdates: true)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return image
         
@@ -136,7 +136,7 @@ class BlurMaskViewController :UIViewController, UIScrollViewDelegate {
         gaussianBlurFilter.setValue(30, forKey: "inputRadius")
         
         let context : CIContext = CIContext(options: nil)
-        let cgImage : CGImageRef = context.createCGImage(gaussianBlurFilter.outputImage!, fromRect: (inputImage?.extent)!)
+        let cgImage : CGImageRef = context.createCGImage(gaussianBlurFilter.outputImage!, fromRect: (inputImage?.extent)!)!
         
         
         // Set up output context.
@@ -155,7 +155,7 @@ class BlurMaskViewController :UIViewController, UIScrollViewDelegate {
         CGContextFillRect(outputContext, self.view.frame)
         CGContextRestoreGState(outputContext)
         // Output image is ready.
-        let outputImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let outputImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return outputImage;
         
