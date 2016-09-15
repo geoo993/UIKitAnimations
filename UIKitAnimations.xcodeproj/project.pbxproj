@@ -34,6 +34,8 @@
 		C734B82D1CCC016200654387 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B82C1CCC016200654387 /* CircleView.swift */; };
 		C734B8311CCC0AD800654387 /* RingAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B8301CCC0AD800654387 /* RingAround.swift */; };
 		C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */; };
+		C767A1F21D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C767A1F11D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift */; };
+		C767A1F41D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C767A1F31D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift */; };
 		C788E63A1D893BCA0066AC5C /* BlurUITextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */; };
 		C788E64D1D8946300066AC5C /* UITextView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E64C1D8946300066AC5C /* UITextView+Ext.swift */; };
 		C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0A54A1CD36AC90009837D /* GradientView.swift */; };
@@ -286,6 +288,8 @@
 		C734B82C1CCC016200654387 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		C734B8301CCC0AD800654387 /* RingAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingAround.swift; sourceTree = "<group>"; };
 		C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		C767A1F11D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+TapToFocusWord.swift"; sourceTree = "<group>"; };
+		C767A1F31D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapToFocusWordProviding.swift; sourceTree = "<group>"; };
 		C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurUITextViewViewController.swift; sourceTree = "<group>"; };
 		C788E64C1D8946300066AC5C /* UITextView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Ext.swift"; sourceTree = "<group>"; };
 		C78C5CF01CBF954200DC359C /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 		C71F7D791CB80BAF009211CC /* UIKitAnimationsApp */ = {
 			isa = PBXGroup;
 			children = (
+				C767A1DE1D8ADDE500E5CAD0 /* TapToFocusWord */,
 				C70567B81CBE6B6100E64C89 /* Model */,
 				C709FB4F1CBCD53300417B12 /* Algorithms */,
 				C709FB501CBCD54D00417B12 /* Views */,
@@ -473,6 +478,15 @@
 				C7A2C4911D89933E00635D6C /* UIKit.playground */,
 			);
 			name = Playgrounds;
+			sourceTree = "<group>";
+		};
+		C767A1DE1D8ADDE500E5CAD0 /* TapToFocusWord */ = {
+			isa = PBXGroup;
+			children = (
+				C767A1F11D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift */,
+				C767A1F31D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift */,
+			);
+			name = TapToFocusWord;
 			sourceTree = "<group>";
 		};
 		C7A2C4851D8990F800635D6C /* Products */ = {
@@ -792,6 +806,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C709FB381CBCD49D00417B12 /* UIKit+Ext.swift in Sources */,
+				C767A1F21D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift in Sources */,
+				C767A1F41D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift in Sources */,
 				C71E4BC11CD3341700C1AA23 /* RadialGradientLayer.swift in Sources */,
 				C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */,
 				C734B8141CCC004600654387 /* AnimationsViewController.swift in Sources */,

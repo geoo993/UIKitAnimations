@@ -16,196 +16,295 @@ import EasyAnimation
 
 class BlurUITextViewViewController : UIViewController {
     
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     let container = UIView()
-    
-    
-    
+        
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
         
+//        self.view.layer.transform = CATransform3DScale(CATransform3DIdentity, 0.5, 0.5, 0.0)
+        
+        let containerView = UIView(frame: view.frame)
+//        containerView.layer.transform = CATransform3DScale(CATransform3DIdentity, 0.5, 0.5, 1.0)
+        self.view.addSubview(containerView)
+        
+        
         
         let text = "I note the obvious differences in the human family. \nSome of us are serious, some thrive on comedy. \nI've sailed upon the seven seas and stopped in every land, I've seen the wonders of the world not yet one common man. \nI know ten thousand women called Jane and Mary Jane, but I've not seen any two who really were the same. \nMirror twins are different although their features jibe, and lovers think quite different thoughts while lying side by side. \nI note the obvious differences between each sort and type, but we are more alike, my friends, than we are unalike. \nWe are more alike, my friends, than we are unalike. We are more alike, my friends, than we are unalike."
         
         
         let newtextFrame = CGRect(x: 0, y: 0, width: 300, height:450)
-        let newText = UITextView(frame: newtextFrame)
-        newText.center = self.view.center
+        let textView = UITextView(frame: newtextFrame)
+        textView.center = self.view.center
         
-        newText.text = text
-        newText.textAlignment = NSTextAlignment.Left
-        newText.font = UIFont(name:"Helvetica", size: 12.0)
-        newText.font = UIFont.systemFontOfSize(16.0);
-        newText.editable = false
+        textView.text = text
+        textView.textAlignment = NSTextAlignment.Left
+        textView.font = UIFont(name:"Helvetica", size: 12.0)
+        textView.font = UIFont.systemFontOfSize(16.0);
+        textView.editable = false
         //newText.roundCorners(UIRectCorner.AllCorners, radius: 5)
-        newText.backgroundColor = UIColor.clearColor()
-        self.view.addSubview(newText)
+        textView.backgroundColor = UIColor.clearColor()
+        containerView.addSubview(textView)
         
         
-        let wordHighlight = UIView(frame: CGRect.zero)
-        wordHighlight.backgroundColor = UIColor.redColor()
-        newText.addSubview(wordHighlight)
+//        let wordHighlight = UIView(frame: CGRect.zero)
+//        wordHighlight.backgroundColor = UIColor.redColor()
+//        textView.addSubview(wordHighlight)
+//        
+//        wordHighlight.layer.zPosition = -1;
         
-        wordHighlight.layer.zPosition = -1;
+        let tapToFocusWordEvents = textView.addTapToFocusWordFeature()
         
-        
-        let frame = newText.bounds
-        let horizontalGradient = CAGradientLayer()
-        horizontalGradient.startPoint = CGPoint(x: 0, y: 0)
-        horizontalGradient.endPoint = CGPoint(x: 1, y: 0)
-        horizontalGradient.frame = frame//newText.superview?.bounds ?? CGRectNull
-        //only takes alpha
-        horizontalGradient.colors = [
-            UIColor.blackColor().CGColor, 
-            UIColor.blackColor().CGColor, 
-            UIColor.clearColor().CGColor, 
-            UIColor.clearColor().CGColor, 
-            UIColor.blackColor().CGColor, 
-            UIColor.blackColor().CGColor]
-        horizontalGradient.locations = [0.0, 0.15, 0.25, 0.75, 0.85, 1.0]
-
-        let verticalGradient = CAGradientLayer()
-        verticalGradient.startPoint = CGPoint(x: 0, y: 0)
-        verticalGradient.endPoint = CGPoint(x: 0, y: 1)
-        verticalGradient.frame = frame //newText.superview?.bounds ?? CGRectNull
-        //only takes alpha
-        verticalGradient.colors = [
-            UIColor.blackColor().CGColor, 
-            UIColor.blackColor().CGColor, 
-            UIColor.clearColor().CGColor, 
-            UIColor.clearColor().CGColor, 
-            UIColor.blackColor().CGColor, 
-            UIColor.blackColor().CGColor]
-        verticalGradient.locations = [0.0, 0.15, 0.25, 0.75, 0.85, 1.0]
-        
-        horizontalGradient.addSublayer(verticalGradient) 
-        
-        //newText.layer.addSublayer(horizontalGradient)
-        newText.superview?.layer.mask = horizontalGradient
-        
-        newText.backgroundColor = UIColor.clearColor()
+        tapToFocusWordEvents.subscribeNext {
+            print($0)
+            switch $0 {
+            case let .didTapWord(index: idx, word: word):
+                print(idx, word)
+                tapToFocusWordEvents.onNext(.doZoomIn(duration: 1.0))
+            default: break
+            }
+        }.addDisposableTo(disposeBag)
         
         
         
         
-        let originalAnchor = newText.layer.anchorPoint
-        let originalTransform = newText.layer.transform
-        let zoomScale : CGFloat = 2.0
         
         
-        let longPressGesture = UILongPressGestureRecognizer()
-        longPressGesture.minimumPressDuration = 0.0
-        
-        longPressGesture
-            .rx_event
-            .subscribeNext { tap in
-                
-                let location = tap.locationInView(newText)
-                
-                switch tap.state {
-                case .Began: 
-                    
-                    let position = newText.closestPositionToPoint(location)
-                    guard let range = newText.tokenizer.rangeEnclosingPosition(position!, withGranularity: UITextGranularity.Word, inDirection: UITextDirection.min) 
-                        else {  return }
-                    let word = newText.textInRange(range)
-                    let wordRange = newText.textRangeToIntRange(range)
-                    guard let wordRect = self.rectForRange(wordRange, textView: newText) else { return }
-                   
-                    wordHighlight.frame = wordRect
-                    
-                    let newAnchor = CGPoint(
-                    x: wordRect.midX / newText.frame.width, 
-                    y: wordRect.midY / newText.frame.height)
-                    
-                    print("new anchor ", newAnchor)
-                    
-                    //let xPos = wordrect.origin.x + newText.frame.origin.x
-                    //let yPos = wordrect.origin.y + newText.frame.origin.y
-                    //wordHighlight.frame = CGRect(x: xPos, y: yPos, width: wordrect.width, height: wordrect.height)
-                    
-                   
-                    //let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-                    //let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                    //blurEffectView.frame = newText.bounds
-                    //blurEffectView.alpha = 0.0
-                    //blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-                    //newText.addSubview(blurEffectView)
-                    
-                    
-                    
-                    UIView.animateWithDuration(1.0, delay: 0, options: [], animations: { 
-                    
-                        let newAnchor = CGPoint(
-                            x: wordRect.midX / newText.frame.width, 
-                            y: wordRect.midY / newText.frame.height)
-                        
-                        newText.layer.anchorPoint = newAnchor
-                    
-                        let scaleTransform = originalTransform 
-                        self.view.layer.transform = CATransform3DScale(scaleTransform, zoomScale, zoomScale, 1.0) 
-                        
-                        //blurEffectView.alpha = 1.0
-                        
-                        }, completion: { _ in
-                            
-                                    
-                            UIView.animateWithDuration(1.0, delay: 5.0, options: [], animations: {
-                            
-                            let scaleTransform = originalTransform 
-                            self.view.layer.transform = scaleTransform
-                            
-                            wordHighlight.frame = CGRect.zero
-                            
-                            //blurEffectView.alpha = 0.0
-                                
-                                
-                            newText.layer.anchorPoint = originalAnchor
-                                
-                            }, completion: nil)
-                            
-                            
-                            
-                        })
-                    
-                    
-                    print("word", word, "wordrect", wordRect)
-                    print("began", location)
-                case .Changed: 
-                                        print("changed", location)
-                case .Ended: 
-                    print("ended", location)
-                default:
-                    print("tap ")
-                }   
-            }.addDisposableTo(disposeBag)
-        newText.addGestureRecognizer(longPressGesture)   
+//        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = textView.frame
+//        blurEffectView.alpha = 1.0
+//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+//        containerView.insertSubview(blurEffectView, belowSubview: textView )
+//        
+//        
+//        print("self origin X", self.view.frame.origin.x, "self origin Y",self.view.frame.origin.y)
+//        print("sel center X", self.view.center.x, "self center Y",self.view.center.y)
+//        print("self bounds ", self.view.bounds)
+//        print("self anchor point ", self.view.layer.anchorPoint)
+//        
+//        print("textview origin X", textView.frame.origin.x, "textview origin Y",textView.frame.origin.y)
+//        print("textview center X", textView.center.x, "textview center Y",textView.center.y)
+//        print("textview bounds ", textView.bounds)
+//        print("textview anchor point ", textView.layer.anchorPoint)
+//
+//        
+//        let frame = self.view.bounds
+//        let clearColor = UIColor.clearColor().CGColor
+//        let otherColor = UIColor.blackColor().CGColor
+//        
+//        let horizontalGradient = CAGradientLayer()
+//        horizontalGradient.startPoint = CGPoint(x: 0, y: 0)
+//        horizontalGradient.endPoint = CGPoint(x: 1, y: 0)
+//        horizontalGradient.frame = frame//newText.superview?.bounds ?? CGRectNull
+//        //only takes alpha
+//        horizontalGradient.colors = [
+//            clearColor, 
+//            clearColor, 
+//            otherColor, 
+//            otherColor, 
+//            clearColor, 
+//            clearColor]
+//        horizontalGradient.locations = [0.0, 0.15, 0.25, 0.75, 0.85, 1.0]
+//        
+//        let verticalGradient = CAGradientLayer()
+//        verticalGradient.startPoint = CGPoint(x: 0, y: 0)
+//        verticalGradient.endPoint = CGPoint(x: 0, y: 1)
+//        verticalGradient.frame = frame //newText.superview?.bounds ?? CGRectNull
+//        //only takes alpha
+//        verticalGradient.colors = [
+//            clearColor, 
+//            clearColor, 
+//            clearColor, 
+//            clearColor, 
+//            clearColor, 
+//            clearColor]
+//        verticalGradient.locations = [0.0, 0.15, 0.25, 0.75, 0.85, 1.0]
+//        horizontalGradient.addSublayer(verticalGradient) 
+//        //self.view.layer.addSublayer(horizontalGradient)
+//        containerView.layer.mask = horizontalGradient
+//        
+//        
+//        
+//        
+////        print("newtext anchor", newText.layer.anchorPoint, " hori layer anchor", horizontalGradient.anchorPoint)
+////        
+////        let layerOriginalTransform = horizontalGradient.transform
+////        let layerOriginalAnchor = horizontalGradient.anchorPoint
+//        
+//        let originalAnchor = textView.layer.anchorPoint
+//        let originalTransform = textView.layer.transform
+//        let zoomScale : CGFloat = 2.0
+//        
+//        let longPressGesture = UILongPressGestureRecognizer()
+//        longPressGesture.minimumPressDuration = 0.0
+//        
+//        longPressGesture
+//            .rx_event
+//            .subscribeNext { tap in
+//                
+//                let location = tap.locationInView(textView)
+//                
+//                switch tap.state {
+//                case .Began: 
+//                    
+//                    let position = textView.closestPositionToPoint(location)
+//                    guard let range = textView.tokenizer.rangeEnclosingPosition(position!, withGranularity: UITextGranularity.Word, inDirection: UITextDirection.min) 
+//                        else {  return }
+//                    let word = textView.textInRange(range)
+//                    let wordRange = textView.textRangeToIntRange(range)
+//                    guard let wordRect = textView.rectForRange(wordRange) else { return }
+//                   
+//                    let wordRectInSuperview = textView.convertRect(wordRect, toView: self.view)
+//                    let borderSize = wordRect.height / 3
+//                    let borderRectInSuperview = wordRectInSuperview.insetBy(dx: -borderSize, dy: -borderSize)
+//                    print("wordRect", wordRect)
+//                    print("wordRectInSuperview", wordRectInSuperview)
+//                    print("borderRectInSuperview", borderRectInSuperview)
+//
+//                    
+////                    let dot = CALayer()
+////                    dot.cornerRadius = 4
+////                    dot.frame = CGRect(x: wordRect.minX, y:wordRect.minY, width: 4, height: 4)
+////                    dot.backgroundColor = UIColor.redColor().CGColor
+////                    newText.layer.addSublayer(dot)
+//                    
+//                    wordHighlight.frame = wordRect
+//                    let newAnchor = CGPoint(
+//                        x: wordRect.midX / textView.frame.width, 
+//                        y: wordRect.midY / textView.frame.height)
+////                    let newLayerAnchor = CGPoint(
+////                        x: wordRect.midX / horizontalGradient.frame.width, 
+////                        y: wordRect.midY / horizontalGradient.frame.height)
+////                    print("new anchor", newAnchor, "new layer anchor", newLayerAnchor)
+////
+////                    
+//                    
+//                   
+//                    let horizontalLocations =
+//                        [0.0, 
+//                        borderRectInSuperview.minX, 
+//                        wordRectInSuperview.minX,
+//                        wordRectInSuperview.maxX, 
+//                        borderRectInSuperview.maxX,
+//                        self.view.frame.width]
+//                    .map { $0 / self.view.frame.width }
+//                    
+//                    let verticalLocations =
+//                        [0.0, 
+//                        borderRectInSuperview.minY, 
+//                            wordRectInSuperview.minY,
+//                            wordRectInSuperview.maxY, 
+//                            borderRectInSuperview.maxY,
+//                            self.view.frame.height]
+//                            .map { $0 / self.view.frame.height }
+//                    
+////                    print("top left", topLeft)
+////                    print("top right", topRight)
+////                    print("bottom left", bottomLeft)
+////                    print("bottom right", bottomRight)
+////                    print("horizontal anchor 1", horizontolAnchorPoint1)
+////                    print("horizontal anchor 2", horizontolAnchorPoint2)
+////                    print("vertical anchor 1", verticalAnchorPoint1)
+////                    print("vertical anchor 2", verticalAnchorPoint2)
+////                    
+//                    
+//                    UIView.animateWithDuration(1.0, delay: 0, options: [], animations: { 
+//                    
+//                        
+////                        horizontalGradient.colors = [
+////                            otherColor, 
+////                            otherColor, 
+////                            clearColor, 
+////                            clearColor, 
+////                            otherColor, 
+////                            otherColor]
+////                        horizontalGradient.locations = horizontalLocations
+////
+////                        verticalGradient.colors = [
+////                            otherColor, 
+////                            otherColor, 
+////                            clearColor, 
+////                            clearColor, 
+////                            otherColor, 
+////                            otherColor]
+////                        verticalGradient.locations = verticalLocations
+//
+//                        
+//                        
+//                        }, completion: { _ in
+//                            
+//                                    
+//                            UIView.animateWithDuration(1.0, delay: 0.0, options: [], animations: {
+//                            
+////                                    newText.layer.anchorPoint = newAnchor
+////                                    horizontalGradient.anchorPoint = newLayerAnchor
+//                                
+////                                    let scaleTransform = originalTransform 
+////                                    self.view.layer.transform = CATransform3DScale(scaleTransform, zoomScale, zoomScale, 1.0) 
+////                                    //self.view.layer.transform = CATransform3DScale(horizontalGradient.transform, zoomScale, zoomScale, 1.0)
+////            
+//            
+//                                }, completion: {_ in
+//                                    
+//                                    UIView.animateWithDuration(1.0, delay: 5.0, options: [], animations: {
+//                                    
+//                                        
+////                                        newText.layer.anchorPoint = originalAnchor
+////                                        horizontalGradient.anchorPoint = layerOriginalAnchor
+//                                        
+////                                        let scaleTransform = originalTransform 
+////                                        self.view.layer.transform = scaleTransform
+////                                        //self.view.layer.transform = layerOriginalTransform
+//
+//                                        
+//                                        wordHighlight.frame = CGRect.zero
+//                                        
+//                                        
+////                                        horizontalGradient.colors = [
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor]
+////                                        //horizontalGradient.locations = [0,0,0,0,0,0]
+////                                        verticalGradient.colors = [
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor, 
+////                                            clearColor]
+////                                        //verticalGradient.locations = [0,0,0,0,0,0]
+//                                        
+//                                    }, completion: nil)
+//                            
+//                            
+//                            })
+//                           
+//                        })
+//                    
+//                    
+//                    print("word", word, "wordrect", wordRect)
+//                    print("began", location)
+//                case .Changed: 
+//                                        print("changed", location)
+//                case .Ended: 
+//                    print("ended", location)
+//                default:
+//                    print("tap ")
+//                }   
+//            }.addDisposableTo(disposeBag)
+//        textView.addGestureRecognizer(longPressGesture)   
 
     }
     
-    
-    private let kWordHighlightHeightScale : CGFloat = 0.9
-    func rectForRange(range: Range<Int>, textView: UITextView) -> CGRect? {
-        if let
-            start   = textView.positionFromPosition(textView.beginningOfDocument, offset: range.startIndex),
-            end     = textView.positionFromPosition(textView.beginningOfDocument, offset: range.endIndex) {
-            
-            let textRange = textView.textRangeFromPosition(start, toPosition: end)
-            var rect = textView.firstRectForRange(textRange!)
-            let offset = textView.contentOffset
-            let lineSpace :CGFloat = 0.0//StoryTweaks.assign(StoryTweaks.textViewVerticalLineSpace)
-            let height = kWordHighlightHeightScale * (rect.height - lineSpace)
-            let yOffset = (1.0 - kWordHighlightHeightScale) * (rect.height - lineSpace)
-            rect.offsetInPlace(dx: 0, dy: -offset.y + yOffset)
-            rect.size = CGSize(width: rect.width, height: height)
-            return rect
-        } else {
-            return nil
-        }
-    }
+
     
     func imageWithView(view:UIView)->UIImage{
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
@@ -217,12 +316,34 @@ class BlurUITextViewViewController : UIViewController {
     
     
     
+    //let xPos = wordrect.origin.x + newText.frame.origin.x
+    //let yPos = wordrect.origin.y + newText.frame.origin.y
+    //wordHighlight.frame = CGRect(x: xPos, y: yPos, width: wordrect.width, height: wordrect.height)
+    
+    
+    //let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+    //let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    //blurEffectView.frame = newText.bounds
+    //blurEffectView.alpha = 0.0
+    //blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+    //newText.addSubview(blurEffectView)
+    
+    
     //func animateScaleWord(word: String, range: UITextRange, textView: UITextView){
         
         //let wordRect = textView.firstRectForRange(range)
         
         //print("word", word, "wordRect", wordRect)
         
+    
+    
+    
+    //        let viewOb = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    //        viewOb.backgroundColor = UIColor.randomColor()
+    //        self.view.addSubview(viewOb)
+    
+    
+    
         //print("self origin X", self.view.frame.origin.x, "self origin Y",self.view.frame.origin.y)
         //print("sel center X", self.view.center.x, "self center Y",self.view.center.y)
         //print("self bounds ", self.view.bounds)
@@ -233,9 +354,16 @@ class BlurUITextViewViewController : UIViewController {
         //print("textview frame ", textView.frame)
         //print("textview bounds ", textView.bounds)
         
-        //print("wordrect bounds", wordRect)
-        //print("wordrect origin X", wordRect.x, "wordrect origin Y",wordRect.y)
-        //print("wordrect Max X", wordRect.maxX, "wordrect Max Y",wordRect.maxY)
+    //                    print("wordrect bounds", wordHighlight.bounds)
+    //                    print("wordrect origin X", wordHighlight.frame.origin.x, "wordrect origin Y",wordHighlight.frame.origin.y)
+    //                    print("wordrect center X", wordHighlight.center.x, "wordrect center Y",wordHighlight.center.y)
+    //                    print("wordrect Min X", wordHighlight.frame.minX, "wordrect Min Y",wordHighlight.frame.minY)
+    //                    print("wordrect Mid X", wordHighlight.frame.midX, "wordrect Mid Y",wordHighlight.frame.midY)
+    //                    print("wordrect Max X", wordHighlight.frame.maxX, "wordrect Max Y",wordHighlight.frame.maxY)
+    //                    print("wordrect anchor point ", wordHighlight.layer.anchorPoint)
+    //                    
+    
+    
         
         //print("anchor point", self.textView?.layer.anchorPoint)
         
