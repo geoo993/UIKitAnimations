@@ -36,6 +36,7 @@
 		C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */; };
 		C767A1F21D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C767A1F11D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift */; };
 		C767A1F41D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C767A1F31D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift */; };
+		C767A1F61D8AF1AA00E5CAD0 /* Blurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C767A1F51D8AF1AA00E5CAD0 /* Blurable.swift */; };
 		C788E63A1D893BCA0066AC5C /* BlurUITextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */; };
 		C788E64D1D8946300066AC5C /* UITextView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E64C1D8946300066AC5C /* UITextView+Ext.swift */; };
 		C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0A54A1CD36AC90009837D /* GradientView.swift */; };
@@ -290,6 +291,7 @@
 		C74DFF8B1CCD65FB00405576 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		C767A1F11D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+TapToFocusWord.swift"; sourceTree = "<group>"; };
 		C767A1F31D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapToFocusWordProviding.swift; sourceTree = "<group>"; };
+		C767A1F51D8AF1AA00E5CAD0 /* Blurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blurable.swift; sourceTree = "<group>"; };
 		C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurUITextViewViewController.swift; sourceTree = "<group>"; };
 		C788E64C1D8946300066AC5C /* UITextView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Ext.swift"; sourceTree = "<group>"; };
 		C78C5CF01CBF954200DC359C /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 		C767A1DE1D8ADDE500E5CAD0 /* TapToFocusWord */ = {
 			isa = PBXGroup;
 			children = (
+				C767A1F51D8AF1AA00E5CAD0 /* Blurable.swift */,
 				C767A1F11D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift */,
 				C767A1F31D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift */,
 			);
@@ -809,6 +812,7 @@
 				C767A1F21D8ADE4400E5CAD0 /* UITextView+TapToFocusWord.swift in Sources */,
 				C767A1F41D8ADF3200E5CAD0 /* TapToFocusWordProviding.swift in Sources */,
 				C71E4BC11CD3341700C1AA23 /* RadialGradientLayer.swift in Sources */,
+				C767A1F61D8AF1AA00E5CAD0 /* Blurable.swift in Sources */,
 				C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */,
 				C734B8141CCC004600654387 /* AnimationsViewController.swift in Sources */,
 				C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */,

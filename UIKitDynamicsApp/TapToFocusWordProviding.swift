@@ -15,13 +15,14 @@ public enum TapToFocusWordEvents {
     case doZoomOut(duration: Double)
     case doFinish
     //Events
-    case didTapWord(index: Int, word: String)
+    case didTapWord(word: String)
     case zoomInComplete
     case zoomOutComplete
     case didFinish
+    case didFail
 }
 
 
 public protocol TapToFocusWordProviding {
-    func addTapToFocusWordFeature() -> PublishSubject<TapToFocusWordEvents>
+    func addTapToFocusWordFeature(disposeBag: DisposeBag) -> PublishSubject<TapToFocusWordEvents>
 }

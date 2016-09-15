@@ -33,37 +33,36 @@ class BlurUITextViewViewController : UIViewController {
         
         
         
-        let text = "I note the obvious differences in the human family. \nSome of us are serious, some thrive on comedy. \nI've sailed upon the seven seas and stopped in every land, I've seen the wonders of the world not yet one common man. \nI know ten thousand women called Jane and Mary Jane, but I've not seen any two who really were the same. \nMirror twins are different although their features jibe, and lovers think quite different thoughts while lying side by side. \nI note the obvious differences between each sort and type, but we are more alike, my friends, than we are unalike. \nWe are more alike, my friends, than we are unalike. We are more alike, my friends, than we are unalike."
+        let text = "We are more alike, my friends, than we are unalike. \nWe are more alike, my friends, than we are unalike. We are more alike, my friends, than we are unalike."
         
         
-        let newtextFrame = CGRect(x: 0, y: 0, width: 300, height:450)
+        let newtextFrame = CGRect(x: 60, y: 160, width: 300, height:450)
         let textView = UITextView(frame: newtextFrame)
-        textView.center = self.view.center
+        //textView.center = self.view.center
         
         textView.text = text
         textView.textAlignment = NSTextAlignment.Left
-        textView.font = UIFont(name:"Helvetica", size: 12.0)
-        textView.font = UIFont.systemFontOfSize(16.0);
+        textView.font = UIFont.systemFontOfSize(30.0);
         textView.editable = false
         //newText.roundCorners(UIRectCorner.AllCorners, radius: 5)
-        textView.backgroundColor = UIColor.clearColor()
+//        textView.backgroundColor = UIColor.clearColor()
         containerView.addSubview(textView)
         
         
-//        let wordHighlight = UIView(frame: CGRect.zero)
-//        wordHighlight.backgroundColor = UIColor.redColor()
-//        textView.addSubview(wordHighlight)
-//        
-//        wordHighlight.layer.zPosition = -1;
         
-        let tapToFocusWordEvents = textView.addTapToFocusWordFeature()
-        
+        let tapToFocusWordEvents = textView.addTapToFocusWordFeature(disposeBag)
         tapToFocusWordEvents.subscribeNext {
             print($0)
             switch $0 {
-            case let .didTapWord(index: idx, word: word):
-                print(idx, word)
+            case let .didTapWord(word: word):
+                print( word)
                 tapToFocusWordEvents.onNext(.doZoomIn(duration: 1.0))
+            case .zoomInComplete:
+                print("zoom in Complete")
+                tapToFocusWordEvents.onNext(.doZoomOut(duration: 1.0))
+            case .zoomOutComplete:
+                print("zoom out Complete")
+                tapToFocusWordEvents.onNext(.doFinish)
             default: break
             }
         }.addDisposableTo(disposeBag)
@@ -71,17 +70,7 @@ class BlurUITextViewViewController : UIViewController {
         
         
         
-        
-        
-//        
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = textView.frame
-//        blurEffectView.alpha = 1.0
-//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-//        containerView.insertSubview(blurEffectView, belowSubview: textView )
-//        
-//        
+ 
 //        print("self origin X", self.view.frame.origin.x, "self origin Y",self.view.frame.origin.y)
 //        print("sel center X", self.view.center.x, "self center Y",self.view.center.y)
 //        print("self bounds ", self.view.bounds)
