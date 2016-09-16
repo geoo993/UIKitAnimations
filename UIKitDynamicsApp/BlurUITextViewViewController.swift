@@ -36,9 +36,9 @@ class BlurUITextViewViewController : UIViewController {
         let text = "We are more alike, my friends, than we are unalike. \nWe are more alike, my friends, than we are unalike. We are more alike, my friends, than we are unalike."
         
         
-        let newtextFrame = CGRect(x: 60, y: 160, width: 300, height:450)
+        let newtextFrame = view.frame.insetBy(dx: 40, dy: 40) // CGRect(x: 0, y: 0, width: 300, height:450)
         let textView = UITextView(frame: newtextFrame)
-        //textView.center = self.view.center
+        textView.center = self.view.center
         
         textView.text = text
         textView.textAlignment = NSTextAlignment.Left

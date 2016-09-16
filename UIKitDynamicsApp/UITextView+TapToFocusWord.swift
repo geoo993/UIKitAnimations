@@ -11,12 +11,14 @@ import RxSwift
 
 extension UITextView : TapToFocusWordProviding {
     
-    public func addTapToFocusWordFeature(disposeBag: DisposeBag) -> PublishSubject<TapToFocusWordEvents> {
+    public func addTapToFocusWordFeature(disposeBag: DisposeBag, config: TapToFocusWordConfig? = nil) -> PublishSubject<TapToFocusWordEvents> {
         
+        let config = config ?? TapToFocusWordConfig.defaultConfig
         
+        let zoom = config.zoomDuration
         let events = PublishSubject<TapToFocusWordEvents>()
  
-        guard let blurOverlay = (self as UIView).blur(blurRadius: 40.0)
+        guard let blurOverlay = (self as UIView).blur(blurRadius: 2.0)
             else {
                 events.onNext(.didFail)
                 events.onCompleted()
@@ -100,7 +102,7 @@ extension UITextView : TapToFocusWordProviding {
                         y: wordRect.midY / self.frame.height)
                     
                     //let wordRectInSuperview = self.convertRect(wordRect, toView: self.view)
-                    let borderSize = wordRect.height / 2
+                    let borderSize = wordRect.height / 3
                     let borderRectInSuperview = wordRect.insetBy(dx: -borderSize, dy: -borderSize)
                     
                     
@@ -138,21 +140,10 @@ extension UITextView : TapToFocusWordProviding {
             case let .doZoomIn(duration: duration):
                 print("Start zooming in with \(duration)...")
                 
-                UIView.animateWithDuration(1.0, delay: 2.0, options: [], animations: {
-                        
-                    self.layer.anchorPoint = newAnchor
-                    self.superview!.layer.transform = CATransform3DScale(originalTransform, zoomScale, zoomScale, 1.0) 
-                    
-                    
-                    horizontalGradient.colors = [
-                        opaqueColor, 
-                        opaqueColor, 
-                        clearColor, 
-                        clearColor, 
-                        opaqueColor, 
-                        opaqueColor]
-                    horizontalGradient.locations = horizontalLocations
-                    
+                horizontalGradient.locations = horizontalLocations
+                verticalGradient.locations = verticalLocations
+                
+                UIView.animateWithDuration(1.0, delay: 0.0, options: [], animations: {
                     verticalGradient.colors = [
                         opaqueColor, 
                         opaqueColor, 
@@ -160,7 +151,18 @@ extension UITextView : TapToFocusWordProviding {
                         clearColor, 
                         opaqueColor, 
                         opaqueColor]
-                    verticalGradient.locations = verticalLocations
+                    horizontalGradient.colors = [
+                        opaqueColor, 
+                        opaqueColor, 
+                        clearColor, 
+                        clearColor, 
+                        opaqueColor, 
+                        opaqueColor]
+                        
+                    self.layer.anchorPoint = newAnchor
+                    self.superview!.layer.transform = CATransform3DScale(originalTransform, zoomScale, zoomScale, 1.0) 
+                    
+                    
                     
                     
                     }, completion: { _ in 
@@ -171,11 +173,13 @@ extension UITextView : TapToFocusWordProviding {
             case let .doZoomOut(duration: duration):
                 print("Start zooming out with \(duration)...")
                 
+                //horizontalGradient.locations = [0,0,0,0,0,1.0]
+                //verticalGradient.locations = [0,0,0,0,0,1.0]
+                
                 UIView.animateWithDuration(1.0, delay: 5.0, options: [], animations: {
                     
                     self.layer.anchorPoint = originalAnchor
                     self.superview!.layer.transform = originalTransform
-                    
                     horizontalGradient.colors = [
                         clearColor,
                         clearColor,
@@ -183,7 +187,6 @@ extension UITextView : TapToFocusWordProviding {
                         clearColor,
                         clearColor,
                         clearColor]
-                    horizontalGradient.locations = [0,0,0,0,0,1.0]
                     verticalGradient.colors = [
                         clearColor,
                         clearColor,
@@ -191,7 +194,7 @@ extension UITextView : TapToFocusWordProviding {
                         clearColor,
                         clearColor,
                         clearColor]
-                    verticalGradient.locations = [0,0,0,0,0,1.0]
+                    
                     
                     
                     }, completion: { _ in

@@ -136,7 +136,7 @@ class BlurMaskViewController :UIViewController, UIScrollViewDelegate {
         gaussianBlurFilter.setValue(30, forKey: "inputRadius")
         
         let context : CIContext = CIContext(options: nil)
-        let cgImage : CGImageRef = context.createCGImage(gaussianBlurFilter.outputImage!, fromRect: (inputImage?.extent)!)!
+        let cgImage : CGImageRef = context.createCGImage(gaussianBlurFilter.outputImage!, fromRect: (inputImage?.extent)!)
         
         
         // Set up output context.

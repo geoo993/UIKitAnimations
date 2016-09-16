@@ -997,6 +997,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = UIKitDynamicsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
 				PRODUCT_NAME = UIKitAnimations;
@@ -1016,6 +1017,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = UIKitDynamicsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = George.UIKitAnimations;
 				PRODUCT_NAME = UIKitAnimations;

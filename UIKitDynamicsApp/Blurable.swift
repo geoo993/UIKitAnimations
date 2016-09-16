@@ -62,7 +62,7 @@ extension Blurable
         
         let cgImage = ciContext.createCGImage(result, fromRect: boundingRect)
 
-        let filteredImage = UIImage(CGImage: cgImage!)
+        let filteredImage = UIImage(CGImage: cgImage)
         
         let blurOverlay = BlurOverlay()
         blurOverlay.frame = boundingRect

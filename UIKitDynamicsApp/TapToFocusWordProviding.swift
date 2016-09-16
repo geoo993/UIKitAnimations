@@ -22,7 +22,15 @@ public enum TapToFocusWordEvents {
     case didFail
 }
 
+public struct TapToFocusWordConfig {
+    public var zoomDuration : Double = 1.0
+    public var borderHeightRatio : Double = 1.0
+    public init() {
+    }
+    
+    public static var defaultConfig : TapToFocusWordConfig = TapToFocusWordConfig()
+}
 
 public protocol TapToFocusWordProviding {
-    func addTapToFocusWordFeature(disposeBag: DisposeBag) -> PublishSubject<TapToFocusWordEvents>
+    func addTapToFocusWordFeature(disposeBag: DisposeBag, config: TapToFocusWordConfig?) -> PublishSubject<TapToFocusWordEvents>
 }
