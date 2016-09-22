@@ -3,5 +3,6 @@
     <pages>
         <page name='GradientCompositing'/>
         <page name='ConvertPointToView'/>
+        <page name='TextviewContentOffset'/>
     </pages>
 </playground>
