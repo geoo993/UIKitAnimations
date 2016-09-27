@@ -39,6 +39,7 @@
 		C767A1F61D8AF1AA00E5CAD0 /* Blurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C767A1F51D8AF1AA00E5CAD0 /* Blurable.swift */; };
 		C788E63A1D893BCA0066AC5C /* BlurUITextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */; };
 		C788E64D1D8946300066AC5C /* UITextView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788E64C1D8946300066AC5C /* UITextView+Ext.swift */; };
+		C791CF691D99734000CD8E6D /* TextViewScrollFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791CF681D99734000CD8E6D /* TextViewScrollFade.swift */; };
 		C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0A54A1CD36AC90009837D /* GradientView.swift */; };
 		C7A2C3C21D896C1800635D6C /* BlurEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2C3C11D896C1800635D6C /* BlurEffectController.swift */; };
 		C7A2C3C41D896C4A00635D6C /* MaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2C3C31D896C4A00635D6C /* MaskController.swift */; };
@@ -295,6 +296,7 @@
 		C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurUITextViewViewController.swift; sourceTree = "<group>"; };
 		C788E64C1D8946300066AC5C /* UITextView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Ext.swift"; sourceTree = "<group>"; };
 		C78C5CF01CBF954200DC359C /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; };
+		C791CF681D99734000CD8E6D /* TextViewScrollFade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewScrollFade.swift; sourceTree = "<group>"; };
 		C7A0A54A1CD36AC90009837D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C7A2C3C11D896C1800635D6C /* BlurEffectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurEffectController.swift; sourceTree = "<group>"; };
 		C7A2C3C31D896C4A00635D6C /* MaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskController.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				C788E6391D893BCA0066AC5C /* BlurUITextViewViewController.swift */,
 				C7A2C3C11D896C1800635D6C /* BlurEffectController.swift */,
 				C7A2C3C31D896C4A00635D6C /* MaskController.swift */,
+				C791CF681D99734000CD8E6D /* TextViewScrollFade.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				C788E64D1D8946300066AC5C /* UITextView+Ext.swift in Sources */,
 				C734B8311CCC0AD800654387 /* RingAround.swift in Sources */,
 				C71E4BBA1CD2983900C1AA23 /* UIImageEffects.swift in Sources */,
+				C791CF691D99734000CD8E6D /* TextViewScrollFade.swift in Sources */,
 				C70567BA1CBE6B7300E64C89 /* String+Ext.swift in Sources */,
 				C7A2C3C41D896C4A00635D6C /* MaskController.swift in Sources */,
 				C734B82D1CCC016200654387 /* CircleView.swift in Sources */,

@@ -8,7 +8,7 @@
         <!--Blur UITextView View Controller Scene-->
         <scene sceneID="KKR-1e-WTm">
             <objects>
-                <viewController storyboardIdentifier="BlurUITextViewViewController" id="Oh4-OP-7Ux" userLabel="Blur UITextView View Controller Scene" customClass="BlurUITextViewViewController" customModule="UIKitAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlurUITextViewViewController" id="Oh4-OP-7Ux" userLabel="Blur UITextView View Controller Scene" customClass="TextViewScrollFade" customModule="UIKitAnimations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="veP-33-LNM"/>
                         <viewControllerLayoutGuide type="bottom" id="9GK-2z-F6H"/>
