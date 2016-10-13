@@ -129,6 +129,65 @@ let ff = [[1, 2, 3, 4, 5],[0,2,3,4,5]].toObservable()
         print($0) 
 }
 
+//let storyTextView : StoryTextView
+//let rx_wordRects : Observable<[CGRect]>
+
+//public lazy var meeStart : Observable<CGRect> = Observable.create { observer in 
+    //_ = {} // Code folding
+    
+    //return self.rx_wordRects
+        //.map{ $0.last! }
+        //.bindTo(observer)
+//}
+
+//public lazy var meeStart2 : Observable<CGRect> = {
+    
+    //return self.rx_wordRects
+        //.map{ $0.first! }
+//}()
+
+//public lazy var meeStart3 : Observable<CGRect> = Observable.create { observer in 
+    //_ = {} // Code folding
+    
+    //return self.rx_wordRects
+        //.flatMap { rects  -> Observable<CGRect> in 
+            
+            //return Observable.empty()//Variable(CGRectZero).asObservable()
+        //}
+        //.bindTo(observer)
+//}
+
+////public lazy var cursorIndex : Observable<Int> = Observable.create { observer in 
+////_ = {} // Code folding
+
+////return self.rx_voiceCursorWordIndex
+////.flatMapLatest { ind  -> Observable<Int> in 
+
+////self.reading.voiceCursorWordInd = ind
+////return Variable(0).asObservable()
+////}
+////.bindTo(observer)
+////}
+
+//public lazy var cc : Observable<Int> = Observable.create { observer in
+    //_ = {} // Code folding
+    //return self
+        //.storyTextView.viewModel!.currentWordIdx.asObservable()
+        //.flatMapLatest { ind  -> Observable<Int> in 
+            
+            ////let top = self.touchPointer.top + self.textView.contentOffset.y - 1.5 * self.rippleTouchViewYOffset
+            ////guard let touch = gesture.touchInSuperview 
+            ////else { return (CGPoint(x: self.touchPointer.centerX, y: top), CGPoint.zero) }
+            ////let target = CGPoint(x: touch.point.x, y: top)
+            ////let velocity = touch.velocity ?? CGPointZero
+            
+            //return Variable(0).asObservable()
+        //}
+        //.bindTo(observer)
+//}
+
+
+
 
 
 

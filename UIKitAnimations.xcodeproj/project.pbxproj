@@ -10,6 +10,7 @@
 		C70567BA1CBE6B7300E64C89 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70567B91CBE6B7300E64C89 /* String+Ext.swift */; };
 		C709FB371CBCD49D00417B12 /* Math+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709FB351CBCD49D00417B12 /* Math+Ext.swift */; };
 		C709FB381CBCD49D00417B12 /* UIKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709FB361CBCD49D00417B12 /* UIKit+Ext.swift */; };
+		C71110541DAE8D2400ADA031 /* HighScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71110531DAE8D2400ADA031 /* HighScoreController.swift */; };
 		C71E4B931CD0EA1200C1AA23 /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71E4B921CD0EA1200C1AA23 /* BlurViewController.swift */; };
 		C71E4BAC1CD2842F00C1AA23 /* BlurMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71E4BAB1CD2842F00C1AA23 /* BlurMaskViewController.swift */; };
 		C71E4BAE1CD2859A00C1AA23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71E4BAD1CD2859A00C1AA23 /* CoreGraphics.framework */; };
@@ -29,6 +30,7 @@
 		C71F7DF41CB80D3E009211CC /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C71F7DCE1CB80C03009211CC /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C71F7DF71CB80D3F009211CC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71F7DD61CB80C03009211CC /* RxBlocking.framework */; };
 		C71F7DF81CB80D3F009211CC /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C71F7DD61CB80C03009211CC /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C72A46F81DAC57AE00625D1C /* VelocityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72A46F71DAC57AE00625D1C /* VelocityViewController.swift */; };
 		C72BC11C1CC1232A0012BDFC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72BC11B1CC1232A0012BDFC /* HomeViewController.swift */; };
 		C734B8141CCC004600654387 /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B8131CCC004600654387 /* AnimationsViewController.swift */; };
 		C734B82D1CCC016200654387 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734B82C1CCC016200654387 /* CircleView.swift */; };
@@ -267,6 +269,7 @@
 		C70567B91CBE6B7300E64C89 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		C709FB351CBCD49D00417B12 /* Math+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Math+Ext.swift"; sourceTree = "<group>"; };
 		C709FB361CBCD49D00417B12 /* UIKit+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Ext.swift"; sourceTree = "<group>"; };
+		C71110531DAE8D2400ADA031 /* HighScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreController.swift; sourceTree = "<group>"; };
 		C71E4B921CD0EA1200C1AA23 /* BlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
 		C71E4BAB1CD2842F00C1AA23 /* BlurMaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurMaskViewController.swift; sourceTree = "<group>"; };
 		C71E4BAD1CD2859A00C1AA23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -285,6 +288,7 @@
 		C71F7DA81CB80BD9009211CC /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		C71F7DA91CB80BD9009211CC /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		C71F7DAE1CB80C02009211CC /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = Carthage/Checkouts/RxSwift/Rx.xcodeproj; sourceTree = "<group>"; };
+		C72A46F71DAC57AE00625D1C /* VelocityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VelocityViewController.swift; sourceTree = "<group>"; };
 		C72BC11B1CC1232A0012BDFC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C734B8131CCC004600654387 /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
 		C734B82C1CCC016200654387 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 				C7A2C3C11D896C1800635D6C /* BlurEffectController.swift */,
 				C7A2C3C31D896C4A00635D6C /* MaskController.swift */,
 				C791CF681D99734000CD8E6D /* TextViewScrollFade.swift */,
+				C72A46F71DAC57AE00625D1C /* VelocityViewController.swift */,
+				C71110531DAE8D2400ADA031 /* HighScoreController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -818,10 +824,12 @@
 				C767A1F61D8AF1AA00E5CAD0 /* Blurable.swift in Sources */,
 				C74DFF8C1CCD65FB00405576 /* TransitionViewController.swift in Sources */,
 				C734B8141CCC004600654387 /* AnimationsViewController.swift in Sources */,
+				C72A46F81DAC57AE00625D1C /* VelocityViewController.swift in Sources */,
 				C7A0A54B1CD36AC90009837D /* GradientView.swift in Sources */,
 				C7A2C3C21D896C1800635D6C /* BlurEffectController.swift in Sources */,
 				C71E4B931CD0EA1200C1AA23 /* BlurViewController.swift in Sources */,
 				C72BC11C1CC1232A0012BDFC /* HomeViewController.swift in Sources */,
+				C71110541DAE8D2400ADA031 /* HighScoreController.swift in Sources */,
 				C71F7D7B1CB80BAF009211CC /* AppDelegate.swift in Sources */,
 				C71E4BAC1CD2842F00C1AA23 /* BlurMaskViewController.swift in Sources */,
 				C788E64D1D8946300066AC5C /* UITextView+Ext.swift in Sources */,
